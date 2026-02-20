@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "HK Grotesk";
+	src: url("/fonts/hk-grotesk/HKGrotesk-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HK Grotesk";
+	src: url("/fonts/hk-grotesk/HKGrotesk-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HK Grotesk";
+	src: url("/fonts/hk-grotesk/HKGrotesk-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	color-scheme: light;
+	--background: #ffffff;
+	--foreground: #171717;
+
+	--font-stack-inter: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+	--font-stack-manrope:
+		var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+	--font-stack-outfit: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+	--font-stack-space-grotesk:
+		var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+	--font-stack-hk-grotesk: "HK Grotesk", ui-sans-serif, system-ui, sans-serif;
+	--font-stack-helvetica: "Helvetica", "Arial", sans-serif;
+}
+
+@theme {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+
+	--font-inter: var(--font-stack-inter);
+	--font-manrope: var(--font-stack-manrope);
+	--font-outfit: var(--font-stack-outfit);
+	--font-space-grotesk: var(--font-stack-space-grotesk);
+	--font-hk-grotesk: var(--font-stack-hk-grotesk);
+	--font-helvetica: var(--font-stack-helvetica);
+
+	--font-sans: var(--font-stack-inter);
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+	font-family: var(--font-sans);
+}
+
+@layer base {
+	h1 {
+		font-size: 2.5rem;
+		line-height: 1.1;
+		font-weight: 600;
+	}
+
+	h2 {
+		font-size: 2rem;
+		line-height: 1.2;
+		font-weight: 600;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		line-height: 1.3;
+		font-weight: 600;
+	}
+
+	h4 {
+		font-size: 1.25rem;
+		line-height: 1.35;
+		font-weight: 600;
+	}
+
+	p {
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+}
+
+@media (max-width: 639px) {
+	.clients-section {
+		position: relative;
+		border: 0 !important;
+		border-image: none !important;
+		box-shadow: none !important;
+		outline: 0 !important;
+	}
+
+	.clients-section::before,
+	.clients-section::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: #fff;
+		pointer-events: none;
+		border: 0 !important;
+		box-shadow: none !important;
+	}
+
+	.clients-section::before {
+		top: -1px;
+	}
+
+	.clients-section::after {
+		bottom: -1px;
+	}
+}
+
+@layer utilities {
+	.font-inter {
+		font-family: var(--font-inter);
+	}
+
+	.font-manrope {
+		font-family: var(--font-manrope);
+	}
+
+	.font-outfit {
+		font-family: var(--font-outfit);
+	}
+
+	.font-space-grotesk {
+		font-family: var(--font-space-grotesk);
+	}
+
+	.font-hk-grotesk {
+		font-family: var(--font-hk-grotesk);
+	}
+
+	@keyframes bounce-slow {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-15px);
+		}
+	}
+
+	@keyframes bounce-delayed {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-12px);
+		}
+	}
+
+	.animate-bounce-slow {
+		animation: bounce-slow 5s ease-in-out infinite;
+	}
+
+	.animate-bounce-delayed {
+		animation: bounce-delayed 6s ease-in-out infinite 1s;
+	}
+
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+}
