@@ -10,7 +10,6 @@ const footerLinks = [
 		links: [
 			{ name: "Pricing", href: "/pricing" },
 			{ name: "Team", href: "/team" },
-			{ name: "Blog", href: "/blog" },
 			{ name: "Contact Us", href: "/contact" },
 		],
 	},

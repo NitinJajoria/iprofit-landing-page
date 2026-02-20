@@ -31,7 +31,6 @@ const navItems = [
 	},
 	{ label: "Team", href: "/team" },
 	{ label: "Contact Us", href: "/contact" },
-	{ label: "Blog", href: "/blog" },
 ];
 
 export default function Header() {
@@ -45,8 +44,7 @@ export default function Header() {
 		pathname.startsWith("/industries") ||
 		pathname === "/team" ||
 		pathname === "/pricing" ||
-		pathname === "/contact" ||
-		pathname.startsWith("/blog");
+		pathname === "/contact";
 
 	const [isScrolled, setIsScrolled] = useState(false);
 
@@ -65,12 +63,13 @@ export default function Header() {
 
 	return (
 		<header
-			className={`fixed top-0 z-50 w-full transition-all duration-300 ease-in-out ${isScrolled
+			className={`fixed top-0 z-50 w-full transition-all duration-300 ease-in-out ${
+				isScrolled
 					? "bg-white/80 shadow-sm backdrop-blur-md"
 					: isTransparentPage
 						? "bg-transparent"
 						: "bg-white"
-				}`}
+			}`}
 		>
 			<div className="relative flex w-full items-center justify-between gap-6 pl-4 sm:pl-8 md:pl-12 lg:pl-[79px] pr-4 sm:pr-6 md:pr-10 lg:pr-20 py-2 lg:py-2.5">
 				<Link href="/" aria-label="iProfit Home" className="shrink-0">
@@ -96,8 +95,9 @@ export default function Header() {
 									<li key={item.label} className="group relative py-3">
 										<Link
 											href={item.href}
-											className={`flex items-center gap-1 transition-colors hover:text-[#008ADD] ${isActive ? "text-[#008ADD]" : "text-black"
-												}`}
+											className={`flex items-center gap-1 transition-colors hover:text-[#008ADD] ${
+												isActive ? "text-[#008ADD]" : "text-black"
+											}`}
 										>
 											{item.label}
 											{item.children && (
@@ -123,10 +123,11 @@ export default function Header() {
 														<Link
 															key={child.href}
 															href={child.href}
-															className={`block rounded-md px-4 py-2 text-sm transition-colors hover:bg-gray-50 hover:text-[#008ADD] ${pathname === child.href
+															className={`block rounded-md px-4 py-2 text-sm transition-colors hover:bg-gray-50 hover:text-[#008ADD] ${
+																pathname === child.href
 																	? "bg-gray-50 text-[#008ADD]"
 																	: "text-gray-700"
-																}`}
+															}`}
 														>
 															{child.label}
 														</Link>
