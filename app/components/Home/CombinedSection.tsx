@@ -1,10 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+	TrendingUp,
+	IndianRupee,
+	BarChart3,
+	Package,
+	Target,
+	ShieldAlert,
+} from "lucide-react";
 import { HiCheck } from "react-icons/hi2";
 import Image from "next/image";
 
-// Animation wrappers as per reference
+// Animation wrappers inspired by the reference snippet
 const FadeInUp = ({
 	children,
 	delay = 0,
@@ -59,6 +67,15 @@ const StaggerItem = ({ children }: { children: React.ReactNode }) => (
 	</motion.div>
 );
 
+const insights = [
+	{ icon: IndianRupee, label: "Track Cash Flow" },
+	{ icon: TrendingUp, label: "Monitor Payroll Liabilities" },
+	{ icon: BarChart3, label: "Review Margins" },
+	{ icon: Package, label: "Control Inventory" },
+	{ icon: Target, label: "Measure Performance" },
+	{ icon: ShieldAlert, label: "Anticipate Risks" },
+];
+
 const reasons = [
 	{
 		title: "Built for Indian Compliance",
@@ -82,50 +99,43 @@ const reasons = [
 	},
 ];
 
-export default function WhyFounders() {
+export default function CombinedSection() {
 	return (
-		<section
-			id="why-iprofit"
-			className="relative md:py-16 py-10 bg-white overflow-hidden"
-		>
+		<section className="relative md:py-16 py-10 bg-[#F1F5F9]/20 overflow-hidden">
 			<div className="mx-auto max-w-7xl px-6">
-				<div className="grid items-center gap-12 lg:grid-cols-2">
-					{/* Left visual */}
-					<FadeInUp>
-						<div className="relative">
-							<div className="absolute -inset-4 rounded-3xl bg-[linear-gradient(135deg,#008ADD10,#0ea5e910)]" />
-							<div className="relative rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
-								<div className="mb-6 flex items-center gap-3">
-									<img
-										src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iProfit-Fs6nCTJOnVonPcC0aUjB4QnvUBamf8.png"
-										alt="iProfit logo"
-										// width={40}
-										// height={40}
-										className="h-8 w-auto"
-									/>
-								</div>
-								<p className="font-outfit text-2xl font-bold leading-snug text-[#0F172A]">
-									Not just software.
-									<br />
-									<span className="text-[#008ADD]">
-										Your operating backbone.
-									</span>
-								</p>
+				<div className="grid items-start gap-12 lg:grid-cols-2">
+					{/* left Content : Business Intelligence */}
+					<div>
+						<FadeInUp>
+							<p className="mb-3 text-sm font-semibold tracking-wider text-[#008ADD] uppercase">
+								Business Intelligence
+							</p>
+							<h2 className="font-outfit text-3xl font-bold text-[#0D1117] md:text-4xl">
+								Total Visibility. Smarter Decisions.
+							</h2>
+							<p className="mt-4 text-lg leading-relaxed text-slate-500">
+								Get a 360-degree view of your business from a single dashboard.
+								Accessible on desktop and mobile, wherever you are.
+							</p>
 
-								<div className="mt-6 relative h-[250px] w-full overflow-hidden">
-									<Image
-										src="/why-founders.png"
-										alt="Why Founders Choose iProfit Visual"
-										fill
-										className="object-contain"
-										sizes="(max-width: 768px) 100vw, 50vw"
-									/>
-								</div>
-							</div>
-						</div>
-					</FadeInUp>
+							<StaggerContainer className="mt-8 grid grid-cols-2 gap-4">
+								{insights.map((item) => (
+									<StaggerItem key={item.label}>
+										<div className="group flex items-center gap-3 rounded-xl bg-white p-3 shadow-sm border border-slate-100 transition-all hover:shadow-md hover:border-blue-100">
+											<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 transition-colors group-hover:bg-[#008ADD] group-hover:text-white">
+												<item.icon className="h-5 w-5 text-[#008ADD] transition-colors group-hover:text-white" />
+											</div>
+											<span className="text-sm font-medium text-[#1E293B]">
+												{item.label}
+											</span>
+										</div>
+									</StaggerItem>
+								))}
+							</StaggerContainer>
+						</FadeInUp>
+					</div>
 
-					{/* Right list */}
+					{/* Right Content: Why Founders */}
 					<div>
 						<FadeInUp>
 							<p className="mb-3 text-sm font-semibold tracking-wider text-[#008ADD] uppercase">

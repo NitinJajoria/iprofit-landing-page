@@ -1,5 +1,6 @@
 import HeroVideo from "./components/Home/HeroVideo";
 import Clients from "./components/Home/Clients";
+import Feedback from "./components/Home/Feedback";
 import ProblemSection from "./components/Home/ProblemSection";
 import FeaturesSection from "./components/Home/FeaturesSection";
 import Why from "./components/Home/Why";
@@ -10,6 +11,7 @@ import WhoUses from "./components/Home/WhoUses";
 import Achieve from "./components/Home/Achieve";
 import BusinessIntelligence from "./components/Home/BusinessIntelligence";
 import WhyFounders from "./components/Home/WhyFounders";
+import CombinedSection from "./components/Home/CombinedSection";
 import ComparisonSection from "./components/Home/ComparisonSection";
 import Testimonials from "./components/Home/Testimonials";
 import ChannelPartner from "./components/Home/ChannelPartner";
@@ -19,6 +21,7 @@ export default function Home() {
 		<main className="flex flex-col bg-white">
 			<HeroVideo />
 			<Clients />
+			<Feedback />
 			<StatsSection />
 			<ProblemSection />
 			<ComparisonSection />
@@ -28,6 +31,7 @@ export default function Home() {
 			<Modules />
 			<Measured />
 			<BusinessIntelligence />
+			<CombinedSection />
 			<WhoUses />
 			<WhyFounders />
 			<Testimonials />

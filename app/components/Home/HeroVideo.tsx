@@ -85,7 +85,7 @@ export default function HeroVideo() {
                             >
                                 <span className="h-2 w-2 rounded-full bg-[#008ADD] animate-pulse" />
                                 <span className="font-outfit text-sm font-medium tracking-wide text-[#008ADD]">
-                                    Made in India, Built for Indian Businesses
+                                    Trusted by growing IT companies across India
                                 </span>
                             </motion.div>
                         </div>

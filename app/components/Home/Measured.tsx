@@ -9,7 +9,13 @@ const highlights = [
 		text: "Real-time view across finance, HR, sales, inventory, and operations",
 		icon: (
 			<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-				<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+				<path
+					d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"
+					stroke="currentColor"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				/>
 				<circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
 			</svg>
 		),
@@ -19,7 +25,13 @@ const highlights = [
 		text: "Performance metrics across every department, tracked automatically",
 		icon: (
 			<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-				<path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+				<path
+					d="M22 12H18L15 21L9 3L6 12H2"
+					stroke="currentColor"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				/>
 			</svg>
 		),
 	},
@@ -28,9 +40,47 @@ const highlights = [
 		text: "Actionable insights to anticipate risks and optimize resources early",
 		icon: (
 			<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-				<path d="M12 20V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-				<path d="M18 20V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-				<path d="M6 20V16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+				<path
+					d="M12 20V10"
+					stroke="currentColor"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+				/>
+				<path
+					d="M18 20V4"
+					stroke="currentColor"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+				/>
+				<path
+					d="M6 20V16"
+					stroke="currentColor"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+				/>
+			</svg>
+		),
+	},
+	{
+		label: "Predictive Analytics / AI based Forecasting",
+		text: "AI-driven forecasts to predict cash flow, sales trends, and operational bottlenecks",
+		// update icon to something more futuristic, maybe a crystal ball or a graph with an upward trend and a magnifying glass
+		icon: (
+			<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+				<path
+					d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
+					stroke="currentColor"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				/>
+				<path
+					d="M12 8V12L15.5 15.5"
+					stroke="currentColor"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				/>
 			</svg>
 		),
 	},
@@ -56,7 +106,8 @@ export default function Measured() {
 							<span className="text-[#008ADD]"> gets managed</span>
 						</h2>
 						<p className="mx-auto mt-6 max-w-2xl font-outfit text-lg font-medium leading-relaxed text-slate-500">
-							One dashboard for your entire business — track KPIs, monitor cash flow, and manage operations from anywhere.
+							One dashboard for your entire business — track KPIs, monitor cash
+							flow, and manage operations from anywhere.
 						</p>
 					</motion.div>
 				</div>
