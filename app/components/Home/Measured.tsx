@@ -168,13 +168,19 @@ export default function Measured() {
 								alt="iProfit unified business dashboard"
 								width={600}
 								height={500}
-								className="h-auto w-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+								className="h-auto w-full object-contain"
 								priority
 							/>
 						</div>
 
 						{/* Background light glow */}
-						<div className="absolute -inset-10 z-0 bg-blue-50/50 blur-[100px] rounded-full" />
+						<div
+							className="absolute -inset-10 z-0 rounded-full"
+							style={{
+								background:
+									"radial-gradient(closest-side, rgba(0,138,221,0.12), transparent 70%)",
+							}}
+						/>
 					</motion.div>
 				</div>
 			</div>
