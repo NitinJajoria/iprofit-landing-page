@@ -8,9 +8,10 @@ import {
 	Package,
 	Target,
 	ShieldAlert,
+	Users,
+	LayoutDashboard,
 } from "lucide-react";
 import { HiCheck } from "react-icons/hi2";
-import Image from "next/image";
 
 // Animation wrappers inspired by the reference snippet
 const FadeInUp = ({
@@ -74,6 +75,8 @@ const insights = [
 	{ icon: Package, label: "Control Inventory" },
 	{ icon: Target, label: "Measure Performance" },
 	{ icon: ShieldAlert, label: "Anticipate Risks" },
+	{ icon: LayoutDashboard, label: "KPIs by Section" },
+	{ icon: Users, label: "Cross‑Team Collaboration" },
 ];
 
 const reasons = [
