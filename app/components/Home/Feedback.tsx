@@ -2,127 +2,30 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+	HiOutlineRectangleStack,
+	HiOutlineClock,
+	HiOutlineEyeSlash,
+} from "react-icons/hi2";
 
 const painPoints = [
 	{
 		before: "Tally + Excel + WhatsApp",
 		insight:
 			"Your data lives in 5 places. Nothing syncs. Every report is a manual merge.",
-		icon: (
-			<svg
-				width="28"
-				height="28"
-				viewBox="0 0 24 24"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<rect
-					x="2"
-					y="3"
-					width="8"
-					height="7"
-					rx="1.5"
-					stroke="currentColor"
-					strokeWidth="1.5"
-				/>
-				<rect
-					x="14"
-					y="3"
-					width="8"
-					height="7"
-					rx="1.5"
-					stroke="currentColor"
-					strokeWidth="1.5"
-				/>
-				<rect
-					x="8"
-					y="14"
-					width="8"
-					height="7"
-					rx="1.5"
-					stroke="currentColor"
-					strokeWidth="1.5"
-				/>
-				<path
-					d="M6 10V12.5H12M18 10V12.5H12M12 12.5V14"
-					stroke="currentColor"
-					strokeWidth="1.5"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					strokeDasharray="3 2"
-				/>
-			</svg>
-		),
+		icon: HiOutlineRectangleStack,
 	},
 	{
 		before: "Week-long month-end closes",
 		insight:
 			"Finance chases HR, HR chases ops, errors compound, compliance deadlines slip.",
-		icon: (
-			<svg
-				width="28"
-				height="28"
-				viewBox="0 0 24 24"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<circle
-					cx="12"
-					cy="12"
-					r="9.5"
-					stroke="currentColor"
-					strokeWidth="1.5"
-				/>
-				<path
-					d="M12 7V12L15.5 15.5"
-					stroke="currentColor"
-					strokeWidth="1.5"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-				/>
-				<path
-					d="M3.5 12H2M22 12H20.5M12 3.5V2M12 22V20.5"
-					stroke="currentColor"
-					strokeWidth="1.5"
-					strokeLinecap="round"
-				/>
-			</svg>
-		),
+		icon: HiOutlineClock,
 	},
 	{
 		before: "No cross-department visibility",
 		insight:
 			"Leadership makes decisions on gut feel because real numbers take days to compile.",
-		icon: (
-			<svg
-				width="28"
-				height="28"
-				viewBox="0 0 24 24"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"
-					stroke="currentColor"
-					strokeWidth="1.5"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-				/>
-				<circle
-					cx="12"
-					cy="12"
-					r="3.5"
-					stroke="currentColor"
-					strokeWidth="1.5"
-				/>
-				<path
-					d="M3 3L21 21"
-					stroke="currentColor"
-					strokeWidth="1.5"
-					strokeLinecap="round"
-				/>
-			</svg>
-		),
+		icon: HiOutlineEyeSlash,
 	},
 ];
 
@@ -160,12 +63,12 @@ export default function Feedback() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true, margin: "-60px" }}
 								transition={{ duration: 0.5, delay: i * 0.12 }}
-								className={`border-b border-[#E5E7EB] py-8 sm:border-b-0 sm:py-10 lg:py-12 ${
+								className={`group border-b border-[#E5E7EB] py-8 sm:border-b-0 sm:py-10 lg:py-12 ${
 									i < 2 ? "sm:border-r sm:border-[#E5E7EB]" : ""
 								} ${i === 0 ? "sm:pr-8 lg:pr-10" : i === 1 ? "sm:px-8 lg:px-10" : "sm:pl-8 lg:pl-10"}`}
 							>
-								<div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#F3F4F6] text-[#9CA3AF]">
-									{item.icon}
+								<div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#008ADD] transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-[#008ADD] group-hover:text-white">
+									<item.icon className="h-6 w-6" />
 								</div>
 								<p className="mb-3 font-manrope text-[13px] font-bold uppercase tracking-[0.08em] text-[#008ADD]">
 									{item.before}
