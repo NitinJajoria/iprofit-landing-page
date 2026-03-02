@@ -18,7 +18,7 @@ export default function HeroVideo() {
 	return (
 		<section
 			ref={containerRef}
-			className="relative min-h-[90vh] overflow-hidden bg-[#F8FBFF] pt-32 pb-16 lg:pt-40 lg:pb-24 flex items-center"
+			className="relative h-screen overflow-hidden bg-[#F8FBFF] py-10 lg:py-20 flex items-center justify-center"
 		>
 			{/* Mesh Gradient Background for Left Side */}
 			<div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
@@ -77,8 +77,8 @@ export default function HeroVideo() {
 				<div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#008ADD]/5 blur-[120px]" />
 			</div>
 
-			<div className="container relative z-10 mx-auto px-6 lg:px-20">
-				<div className="flex flex-col items-center gap-16 lg:flex-row lg:items-center">
+			<div className="container relative z-10 mx-auto px-6 lg:px-20 mt-10 lg:mt-20">
+				<div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center">
 					{/* Left Content */}
 					<div className="w-full text-center lg:w-1/2 lg:text-left">
 						{/* Badge */}
