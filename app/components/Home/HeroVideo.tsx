@@ -104,8 +104,8 @@ export default function HeroVideo() {
 							className="mb-6 font-outfit text-2xl font-bold leading-[1.1] tracking-tight text-[#0D1117] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
 						>
 							Stop Juggling Tools. <br className="hidden sm:block" />
-							<span className="text-[#008ADD]">Run Everything</span> from One
-							Place.
+							<span className="text-[#008ADD]">Run Everything</span> from <br />
+							One Place.
 						</motion.h1>
 
 						{/* Subheading */}
