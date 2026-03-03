@@ -1,39 +1,27 @@
-import HeroVideo from "./components/Home/HeroVideo";
-import Clients from "./components/Home/Clients";
-import Feedback from "./components/Home/Feedback";
-import ProblemSection from "./components/Home/ProblemSection";
-import FeaturesSection from "./components/Home/FeaturesSection";
-import Why from "./components/Home/Why";
-import Measured from "./components/Home/Measured";
-import StatsSection from "./components/Home/StatsSection";
-import Modules from "./components/Home/Modules";
-import WhoUses from "./components/Home/WhoUses";
-import Achieve from "./components/Home/Achieve";
-import BusinessIntelligence from "./components/Home/BusinessIntelligence";
-import WhyFounders from "./components/Home/WhyFounders";
-import CombinedSection from "./components/Home/CombinedSection";
-import ComparisonSection from "./components/Home/ComparisonSection";
-import Testimonials from "./components/Home/Testimonials";
-import ChannelPartner from "./components/Home/ChannelPartner";
+import Hero from "./components/Home-latest/Hero";
+import Problem from "./components/Home-latest/Problem";
+import Modules from "./components/Home-latest/Modules";
+import WithOrWithout from "./components/Home-latest/WithOrWithout";
+import Measured from "./components/Home-latest/Measured";
+import WhoUses from "./components/Home-latest/WhoUses";
+import BusinessIntelligence from "./components/Home-latest/BusinessIntelligence";
+import WhyFounders from "./components/Home-latest/WhyFounders";
+import StatsSection from "./components/Home-latest/Stats";
+import Testimonials from "./components/Home-latest/Testimonials";
+import ChannelPartner from "./components/Home-latest/ChannelPartner";
 
 export default function Home() {
 	return (
 		<main className="flex flex-col bg-white">
-			<HeroVideo />
-			<Clients />
-			<Feedback />
-			<StatsSection />
-			<ProblemSection />
-			<ComparisonSection />
-			<Why />
-			<Achieve />
-			<FeaturesSection />
+			<Hero />
+			<Problem />
 			<Modules />
+			<WithOrWithout />
 			<Measured />
-			<BusinessIntelligence />
-			<CombinedSection />
 			<WhoUses />
+			<BusinessIntelligence />
 			<WhyFounders />
+			<StatsSection />
 			<Testimonials />
 			<ChannelPartner />
 		</main>
