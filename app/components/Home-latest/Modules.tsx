@@ -12,7 +12,7 @@ const modules = [
 			"Real-time cash flow tracking",
 			"Automated reconciliation",
 		],
-		image: "/landing-page/finance.jpeg",
+		image: "/landing-page/finance.png",
 		href: "/finance-accounting",
 	},
 	{
@@ -22,7 +22,7 @@ const modules = [
 			"One-click payroll processing",
 			"Statutory compliance built-in",
 		],
-		image: "/landing-page/hrms.jpeg",
+		image: "/landing-page/payroll.png",
 		href: "/payroll",
 	},
 	{
@@ -32,7 +32,7 @@ const modules = [
 			"Time & cost tracking",
 			"Margin analysis per project",
 		],
-		image: "/landing-page/project.jpeg",
+		image: "/landing-page/project.png",
 		href: "/project-management",
 	},
 	{
@@ -42,7 +42,7 @@ const modules = [
 			"Low-stock alerts",
 			"Purchase order automation",
 		],
-		image: "/landing-page/inventory.jpeg",
+		image: "/landing-page/inventory.png",
 		href: "/inventory-management",
 	},
 	{
@@ -52,7 +52,7 @@ const modules = [
 			"Allocation & utilization reports",
 			"Depreciation management",
 		],
-		image: "/landing-page/asset.jpeg",
+		image: "/landing-page/asset.png",
 		href: "/asset-management",
 	},
 ];
@@ -153,12 +153,12 @@ export default function Why() {
 
 										{/* High-fidelity image mock */}
 										<div className="mt-auto px-6 pb-0 group-hover:px-4 transition-all duration-500">
-											<div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl border-t border-x border-slate-100 bg-slate-50 shadow-inner">
+											<div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl">
 												<Image
 													src={mod.image}
 													alt={mod.title}
 													fill
-													className="object-cover object-bottom transition-transform duration-700 group-hover:scale-105"
+													className="object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
 												/>
 												{/* UI overlay element */}
 												<div className="absolute bottom-4 right-4 h-12 w-12 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/50 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
@@ -245,12 +245,12 @@ export default function Why() {
 
 									{/* High-fidelity image mock */}
 									<div className="mt-auto pb-0 group-hover:px-4 transition-all duration-500">
-										<div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl border-t border-x border-slate-100 bg-slate-50 shadow-inner">
+										<div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl">
 											<Image
 												src={mod.image}
 												alt={mod.title}
 												fill
-												className="object-cover object-bottom transition-transform duration-700 group-hover:scale-105"
+												className="object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
 											/>
 											{/* UI overlay element */}
 											<div className="absolute bottom-4 right-4 h-12 w-12 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/50 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
@@ -271,7 +271,7 @@ export default function Why() {
 										</div>
 									</div>
 
-									<div className="mt-auto flex items-center text-xs font-bold text-[#008ADD] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-10px] group-hover:translate-x-0">
+									{/* <div className="mt-auto flex items-center text-xs font-bold text-[#008ADD] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-10px] group-hover:translate-x-0">
 										LEARN MORE{" "}
 										<svg
 											className="ml-1 h-3 w-3"
@@ -282,7 +282,7 @@ export default function Why() {
 										>
 											<path d="M13 7l5 5m0 0l-5 5m5-5H6" />
 										</svg>
-									</div>
+									</div> */}
 								</Link>
 							</motion.div>
 						))}

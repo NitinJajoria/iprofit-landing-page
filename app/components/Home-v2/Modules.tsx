@@ -12,7 +12,7 @@ const modules = [
 			"Real-time cash flow tracking",
 			"Automated reconciliation",
 		],
-		image: "/landing-page/finance.jpeg",
+		image: "/landing-page/finance.png",
 		href: "/finance-accounting",
 	},
 	{
@@ -22,7 +22,7 @@ const modules = [
 			"One-click payroll processing",
 			"Statutory compliance built-in",
 		],
-		image: "/landing-page/hrms.jpeg",
+		image: "/landing-page/payroll.png",
 		href: "/payroll",
 	},
 	{
@@ -32,7 +32,7 @@ const modules = [
 			"Time & cost tracking",
 			"Margin analysis per project",
 		],
-		image: "/landing-page/project.jpeg",
+		image: "/landing-page/project.png",
 		href: "/project-management",
 	},
 	{
@@ -42,7 +42,7 @@ const modules = [
 			"Low-stock alerts",
 			"Purchase order automation",
 		],
-		image: "/landing-page/inventory.jpeg",
+		image: "/landing-page/inventory.png",
 		href: "/inventory-management",
 	},
 	{
@@ -52,23 +52,23 @@ const modules = [
 			"Allocation & utilization reports",
 			"Depreciation management",
 		],
-		image: "/landing-page/asset.jpeg",
+		image: "/landing-page/asset.png",
 		href: "/asset-management",
 	},
 ];
 
 export default function Why() {
 	return (
-		<section className="bg-white py-10 relative overflow-hidden">
+		<section className="bg-white py-10 md:py-16 relative overflow-hidden">
 			{/* Decorative background accent */}
 			<div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-40">
 				<div className="absolute top-[10%] left-[5%] w-[40%] h-[40%] bg-blue-50 rounded-full blur-[120px]" />
 				<div className="absolute bottom-[10%] right-[5%] w-[30%] h-[30%] bg-slate-50 rounded-full blur-[100px]" />
 			</div>
 
-			<div className="container mx-auto px-6 relative z-10">
+			<div className="container mx-auto px-10 relative z-10">
 				{/* Refined Header */}
-				<div className="mx-auto mb-20 max-w-6xl text-center lg:text-left flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+				<div className="mx-auto mb-20 max-w-7xl text-center lg:text-left flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
 					<div className="lg:max-w-[60%]">
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export default function Why() {
 									The Ecosystem
 								</span>
 							</div>
-							<h2 className="font-outfit text-[40px] font-bold leading-[1.1] tracking-tight text-[#0A0A0B] sm:text-[50px] lg:text-[64px]">
+							<h2 className="font-outfit font-bold leading-[1.1] tracking-tight text-[#0A0A0B] text-[32px] sm:text-[40px] lg:text-[50px]">
 								One Platform. <br />
 								<span className="text-[#008ADD]">Infinite Possibilities.</span>
 							</h2>
@@ -101,7 +101,7 @@ export default function Why() {
 				</div>
 
 				{/* Premium Bento Grid */}
-				<div className="mx-auto max-w-6xl">
+				<div className="mx-auto max-w-7xl">
 					{/* Top row: Featured modules */}
 					<div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
 						{modules.slice(0, 2).map((mod, i) => (
@@ -114,7 +114,7 @@ export default function Why() {
 							>
 								<Link
 									href={mod.href}
-									className="group block relative h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#008ADD]/10 hover:-translate-y-2 hover:border-[#008ADD]/20"
+									className="group block relative h-full overflow-hidden rounded-3xl border border-[#F0F9FF] bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#008ADD]/10 hover:-translate-y-2 hover:border-[#008ADD]/20"
 								>
 									{/* Interactive Background */}
 									<div className="absolute inset-0 bg-gradient-to-br from-[#008ADD]/0 via-transparent to-[#008ADD]/0 group-hover:from-[#008ADD]/5 group-hover:to-transparent transition-all duration-700" />
@@ -153,7 +153,7 @@ export default function Why() {
 
 										{/* High-fidelity image mock */}
 										<div className="mt-auto px-6 pb-0 group-hover:px-4 transition-all duration-500">
-											<div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl border-t border-x border-slate-100 bg-slate-50 shadow-inner">
+											<div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl">
 												<Image
 													src={mod.image}
 													alt={mod.title}
@@ -196,7 +196,7 @@ export default function Why() {
 							>
 								<Link
 									href={mod.href}
-									className="group flex flex-col h-full p-8 rounded-3xl border border-slate-100 bg-[#F8FAFC] transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 hover:border-[#008ADD]/10"
+									className="group flex flex-col h-full p-8 rounded-3xl border border-slate-100 bg-[#F0F9FF] transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 hover:border-[#008ADD]/10"
 								>
 									{/* <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm border border-slate-100 group-hover:bg-[#008ADD] group-hover:text-white transition-all duration-500 group-hover:scale-110">
 										<svg
@@ -245,7 +245,7 @@ export default function Why() {
 
 									{/* High-fidelity image mock */}
 									<div className="mt-auto pb-0 group-hover:px-4 transition-all duration-500">
-										<div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl border-t border-x border-slate-100 bg-slate-50 shadow-inner">
+										<div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl">
 											<Image
 												src={mod.image}
 												alt={mod.title}
@@ -271,7 +271,7 @@ export default function Why() {
 										</div>
 									</div>
 
-									<div className="mt-auto flex items-center text-xs font-bold text-[#008ADD] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-10px] group-hover:translate-x-0">
+									{/* <div className="mt-auto flex items-center text-xs font-bold text-[#008ADD] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-10px] group-hover:translate-x-0">
 										LEARN MORE{" "}
 										<svg
 											className="ml-1 h-3 w-3"
@@ -282,7 +282,7 @@ export default function Why() {
 										>
 											<path d="M13 7l5 5m0 0l-5 5m5-5H6" />
 										</svg>
-									</div>
+									</div> */}
 								</Link>
 							</motion.div>
 						))}
