@@ -59,16 +59,16 @@ const modules = [
 
 export default function Why() {
 	return (
-		<section className="bg-white py-10 relative overflow-hidden">
+		<section className="bg-white py-10 md:py-16 relative overflow-hidden">
 			{/* Decorative background accent */}
 			<div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-40">
 				<div className="absolute top-[10%] left-[5%] w-[40%] h-[40%] bg-blue-50 rounded-full blur-[120px]" />
 				<div className="absolute bottom-[10%] right-[5%] w-[30%] h-[30%] bg-slate-50 rounded-full blur-[100px]" />
 			</div>
 
-			<div className="container mx-auto px-6 relative z-10">
+			<div className="container mx-auto px-10 relative z-10">
 				{/* Refined Header */}
-				<div className="mx-auto mb-20 max-w-6xl text-center lg:text-left flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+				<div className="mx-auto mb-20 max-w-7xl text-center lg:text-left flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
 					<div className="lg:max-w-[60%]">
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
@@ -101,7 +101,7 @@ export default function Why() {
 				</div>
 
 				{/* Premium Bento Grid */}
-				<div className="mx-auto max-w-6xl">
+				<div className="mx-auto max-w-7xl">
 					{/* Top row: Featured modules */}
 					<div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
 						{modules.slice(0, 2).map((mod, i) => (
@@ -114,7 +114,7 @@ export default function Why() {
 							>
 								<Link
 									href={mod.href}
-									className="group block relative h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#008ADD]/10 hover:-translate-y-2 hover:border-[#008ADD]/20"
+									className="group block relative h-full overflow-hidden rounded-3xl border border-[#F0F9FF] bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#008ADD]/10 hover:-translate-y-2 hover:border-[#008ADD]/20"
 								>
 									{/* Interactive Background */}
 									<div className="absolute inset-0 bg-gradient-to-br from-[#008ADD]/0 via-transparent to-[#008ADD]/0 group-hover:from-[#008ADD]/5 group-hover:to-transparent transition-all duration-700" />
@@ -196,7 +196,7 @@ export default function Why() {
 							>
 								<Link
 									href={mod.href}
-									className="group flex flex-col h-full p-8 rounded-3xl border border-slate-100 bg-[#F8FAFC] transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 hover:border-[#008ADD]/10"
+									className="group flex flex-col h-full p-8 rounded-3xl border border-slate-100 bg-[#F0F9FF] transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 hover:border-[#008ADD]/10"
 								>
 									{/* <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm border border-slate-100 group-hover:bg-[#008ADD] group-hover:text-white transition-all duration-500 group-hover:scale-110">
 										<svg

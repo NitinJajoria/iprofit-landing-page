@@ -67,9 +67,9 @@ export default function WhoUses({}: {
 	isTestimonial?: boolean;
 }) {
 	return (
-		<section className="relative bg-[#FAFBFF] py-10">
-			<div className="container z-10 mx-auto px-6 lg:px-20">
-				<div className="flex flex-col gap-16 lg:flex-row lg:items-start lg:gap-24">
+		<section className="relative bg-[#F0F9FF] py-10 md:py-16">
+			<div className="container z-10 mx-auto px-10">
+				<div className="max-w-7xl mx-auto flex flex-col gap-16 lg:flex-row lg:items-start lg:gap-24">
 					{/* Left: Content */}
 					<div className="lg:sticky lg:top-32 lg:w-[40%]">
 						<FadeInUp>

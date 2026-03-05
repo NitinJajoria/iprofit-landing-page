@@ -9,7 +9,7 @@ const withIProfit = [
 	"Aligned cross-functional teams",
 	"Single source of truth",
 	"Built-in compliance automation",
-	"CEOs Visibility through the mobile app anytime, anywhere",
+	"CEO Visibility through the mobile app anytime, anywhere",
 ];
 
 const withoutIProfit = [
@@ -19,26 +19,8 @@ const withoutIProfit = [
 	"Reactive firefighting",
 	"Data in silos – Excel, email, chat",
 	"Compliance risk every quarter",
-	"CEOs in the dark until month-end reports",
+	"CEO in the dark until month-end reports",
 ];
-
-const CheckIcon = () => (
-	<svg
-		width="24"
-		height="24"
-		viewBox="0 0 24 24"
-		fill="none"
-		className="text-emerald-500"
-	>
-		<path
-			d="M20 6L9 17L4 12"
-			stroke="currentColor"
-			strokeWidth="3"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-		/>
-	</svg>
-);
 
 const CrossIcon = () => (
 	<svg
@@ -60,7 +42,7 @@ const CrossIcon = () => (
 
 export default function ComparisonSection() {
 	return (
-		<section className="relative overflow-hidden bg-gradient-to-br from-white to-[#F8FBFF] py-10">
+		<section className="relative overflow-hidden bg-gradient-to-br from-white to-[#F8FBFF] py-10 md:py-16">
 			{/* High-Fidelity Background Elements */}
 			<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
 				{/* Mesh Gradients */}
@@ -101,7 +83,7 @@ export default function ComparisonSection() {
 				))}
 			</div>
 
-			<div className="container relative z-10 mx-auto px-4 lg:px-8">
+			<div className="container relative z-10 mx-auto px-10">
 				{/* Section Header */}
 				<div className="mx-auto mb-12 max-w-3xl text-center">
 					<motion.div

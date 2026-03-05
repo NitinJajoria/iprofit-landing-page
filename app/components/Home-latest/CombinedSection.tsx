@@ -104,11 +104,11 @@ const reasons = [
 
 export default function CombinedSection() {
 	return (
-		<section className="relative md:py-16 py-10 bg-[#F1F5F9]/20 overflow-hidden">
-			<div className="mx-auto max-w-7xl px-6">
-				<div className="grid items-start gap-12 lg:grid-cols-2">
+		<section className="relative md:py-16 py-10 overflow-hidden">
+			<div className="mx-auto container px-10">
+				<div className="max-w-7xl mx-auto grid items-start gap-12 lg:gap-20 lg:grid-cols-2">
 					{/* left Content : Business Intelligence */}
-					<div>
+					<div className="bg-[#F0F9FF] p-6 rounded-2xl">
 						<FadeInUp>
 							<p className="mb-3 text-sm font-semibold tracking-wider text-[#008ADD] uppercase">
 								Business Intelligence
@@ -139,7 +139,7 @@ export default function CombinedSection() {
 					</div>
 
 					{/* Right Content: Why Founders */}
-					<div>
+					<div className="p-6">
 						<FadeInUp>
 							<p className="mb-3 text-sm font-semibold tracking-wider text-[#008ADD] uppercase">
 								Why Founders Choose Us

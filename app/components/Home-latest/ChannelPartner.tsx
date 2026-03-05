@@ -73,14 +73,14 @@ export default function ChannelPartner() {
 	return (
 		<>
 			{/* New Partner Program Showcase */}
-			<section className="relative overflow-hidden bg-[#F8FBFF] py-10">
+			<section className="relative overflow-hidden bg-[#F0F9FF] py-10 md:py-16">
 				{/* Background Elements */}
 				<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
 					<div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-[#008ADD]/5 blur-[120px]" />
 					<div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-[#008ADD]/5 blur-[120px]" />
 				</div>
 
-				<div className="container relative z-10 mx-auto px-4 lg:px-8">
+				<div className="max-w-7xl relative z-10 mx-auto px-10">
 					{/* Section Header */}
 					<div className="mx-auto mb-16 max-w-3xl text-center lg:mb-20">
 						<motion.span
@@ -167,14 +167,15 @@ export default function ChannelPartner() {
 				</div>
 
 				<div className="container relative z-10 mx-auto px-4 lg:px-8">
-					<div className="mx-auto max-w-4xl text-center">
+					<div className="mx-auto max-w-7xl text-center">
 						<motion.h2
 							initial={{ opacity: 0, scale: 0.95 }}
 							whileInView={{ opacity: 1, scale: 1 }}
 							viewport={{ once: true }}
 							className="mb-8 font-outfit text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-6xl"
 						>
-							Ready to Simplify Your <br className="hidden sm:block" /> Business
+							Ready to Simplify Your Business
+							<br className="hidden sm:block" />
 							Operations?
 						</motion.h2>
 

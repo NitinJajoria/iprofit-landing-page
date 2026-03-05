@@ -59,9 +59,9 @@ const FadeInUp = ({
 export default function StatsSection() {
 	return (
 		<section className="relative bg-white py-10 lg:py-16 overflow-hidden">
-			<div className="container mx-auto px-6 lg:px-10">
+			<div className="container mx-auto px-10">
 				{/* The Premium Container */}
-				<div className="relative rounded-[3rem] lg:rounded-[4rem] bg-[#F0F9FF] py-10 lg:py-20 px-10 overflow-hidden">
+				<div className="max-w-7xl mx-auto relative rounded-2xl lg:rounded-4xl bg-[#F0F9FF] py-10 lg:py-20 px-10 overflow-hidden">
 					{/* Header */}
 					<div className="relative z-10 mb-16 text-center">
 						<FadeInUp>
