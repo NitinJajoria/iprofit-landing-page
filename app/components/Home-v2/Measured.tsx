@@ -106,7 +106,7 @@ export default function Measured() {
 							<span className="text-[#008ADD]"> gets managed</span>
 						</h2>
 						<p className="mx-auto mt-6 max-w-2xl font-outfit text-lg font-medium leading-relaxed text-slate-500">
-							One dashboard for your entire business — track KPIs, monitor cash
+							One dashboard for your entire business track KPIs, monitor cash
 							flow, and manage operations from anywhere.
 						</p>
 					</motion.div>

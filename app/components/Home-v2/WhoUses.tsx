@@ -92,7 +92,7 @@ const FadeInUp = ({
 	</motion.div>
 );
 
-export default function WhoUses({ }: {
+export default function WhoUses({}: {
 	title?: string;
 	subtitle?: string;
 	showIndustries?: boolean;
@@ -114,7 +114,7 @@ export default function WhoUses({ }: {
 							</h2>
 							<p className="mb-10 font-outfit text-lg font-medium leading-relaxed text-slate-500/80">
 								Whether you are 10 people or 250, if you have outgrown Excel and
-								Tally — iProfit is your next step.
+								Tally iProfit is your next step.
 							</p>
 							<CTAButton
 								href="https://app.iprofit.in/#/pricing"

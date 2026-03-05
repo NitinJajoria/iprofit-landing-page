@@ -11,7 +11,7 @@ const TESTIMONIALS = [
 		position: "CEO, AlmaBay",
 		company: "AlmaBay",
 		quote:
-			"iProfit cleaned up our entire operations — finance, inventory, payroll — everything runs smooth now. We finally have one place to see how the business is actually doing.",
+			"iProfit cleaned up our entire operations finance, inventory, payroll everything runs smooth now. We finally have one place to see how the business is actually doing.",
 		image: "/Testimonials/vishal.png",
 		rating: 5,
 	},

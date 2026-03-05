@@ -76,8 +76,8 @@ export default function Hero() {
 						className="mb-10 max-w-2xl font-outfit text-lg font-normal leading-relaxed text-[#4B5563] sm:text-xl"
 					>
 						iProfit unifies Finance, HR & Payroll, Inventory, Projects, and
-						Assets into a single ERP — so your team spends less time on admin
-						and more time growing.
+						Assets into a single ERP so your team spends less time on admin and
+						more time growing.
 					</motion.p>
 
 					{/* CTAs */}

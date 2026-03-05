@@ -44,7 +44,7 @@ export default function Feedback() {
 						<div className="lg:max-w-[35%] lg:pb-1">
 							<p className="font-outfit text-[15px] leading-[1.7] text-[#6B7280] sm:text-[16px]">
 								Most IT companies between 10–250 people run on a patchwork of
-								disconnected tools. It works — until it doesn&apos;t.
+								disconnected tools. It works until it doesn&apos;t.
 							</p>
 						</div>
 					</div>

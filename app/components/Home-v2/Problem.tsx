@@ -49,12 +49,17 @@ export default function Feedback() {
 							>
 								<div className="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-100/50">
 									<span className="flex h-2 w-2 rounded-full bg-rose-500" />
-									<span className="text-[11px] font-bold uppercase tracking-wider text-rose-600">The Problem</span>
+									<span className="text-[11px] font-bold uppercase tracking-wider text-rose-600">
+										The Problem
+									</span>
 								</div>
 								<h2 className="font-manrope text-[40px] font-extrabold leading-[1.1] tracking-tight text-[#0A0A0B] sm:text-[50px] lg:text-[64px]">
 									Growing Fast Should <br />
-									Not Feel <span className="relative inline-block">
-										<span className="relative z-10 text-[#008ADD]">Chaotic</span>
+									Not Feel{" "}
+									<span className="relative inline-block">
+										<span className="relative z-10 text-[#008ADD]">
+											Chaotic
+										</span>
 										<motion.span
 											initial={{ scaleX: 0 }}
 											whileInView={{ scaleX: 1 }}
@@ -74,8 +79,8 @@ export default function Feedback() {
 								transition={{ delay: 0.2, duration: 0.6 }}
 								className="font-inter text-lg leading-relaxed text-slate-500 italic border-l-4 border-[#008ADD]/20 pl-6"
 							>
-								"Most IT companies run on a patchwork of disconnected tools.
-								It works — until the scale introduces friction you can't ignore."
+								"Most IT companies run on a patchwork of disconnected tools. It
+								works until the scale introduces friction you can't ignore."
 							</motion.p>
 						</div>
 					</div>
@@ -92,14 +97,17 @@ export default function Feedback() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true, margin: "-100px" }}
 								transition={{ duration: 0.8, delay: i * 0.1 }}
-								className={`group relative flex flex-col items-center gap-16 lg:flex-row ${i % 2 === 1 ? "lg:flex-row-reverse" : ""
-									}`}
+								className={`group relative flex flex-col items-center gap-16 lg:flex-row ${
+									i % 2 === 1 ? "lg:flex-row-reverse" : ""
+								}`}
 							>
 								{/* Premium Node Icon (Matches Stats) */}
 								<div className="lg:w-1/2 flex justify-center">
 									<div className="relative">
 										{/* Watermark Index - Matches Stats style */}
-										<div className={`absolute -top-16 ${i % 2 === 1 ? "-right-8" : "-left-8"} opacity-[0.05] font-outfit text-[120px] font-black text-[#008ADD] select-none transition-all duration-700 group-hover:opacity-[0.15] group-hover:-translate-y-4`}>
+										<div
+											className={`absolute -top-16 ${i % 2 === 1 ? "-right-8" : "-left-8"} opacity-[0.05] font-outfit text-[120px] font-black text-[#008ADD] select-none transition-all duration-700 group-hover:opacity-[0.15] group-hover:-translate-y-4`}
+										>
 											0{i + 1}
 										</div>
 
@@ -121,7 +129,9 @@ export default function Feedback() {
 								</div>
 
 								{/* Refined Content */}
-								<div className={`lg:w-1/2 text-center ${i % 2 === 1 ? "lg:text-right" : "lg:text-left"} relative z-10`}>
+								<div
+									className={`lg:w-1/2 text-center ${i % 2 === 1 ? "lg:text-right" : "lg:text-left"} relative z-10`}
+								>
 									<h3 className="mb-6 font-manrope text-2xl lg:text-4xl font-extrabold text-[#0D1117] leading-tight transition-colors group-hover:text-[#008ADD]">
 										{item.before}
 									</h3>
@@ -131,8 +141,12 @@ export default function Feedback() {
 											{item.insight}
 										</p>
 										{/* Highlight accent on hover */}
-										<div className={`absolute top-0 bottom-0 -left-6 w-1 bg-[#008ADD] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ${i % 2 === 1 ? "hidden" : ""}`} />
-										<div className={`absolute top-0 bottom-0 -right-6 w-1 bg-[#008ADD] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ${i % 2 === 0 ? "hidden" : ""}`} />
+										<div
+											className={`absolute top-0 bottom-0 -left-6 w-1 bg-[#008ADD] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ${i % 2 === 1 ? "hidden" : ""}`}
+										/>
+										<div
+											className={`absolute top-0 bottom-0 -right-6 w-1 bg-[#008ADD] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ${i % 2 === 0 ? "hidden" : ""}`}
+										/>
 									</div>
 								</div>
 							</motion.div>

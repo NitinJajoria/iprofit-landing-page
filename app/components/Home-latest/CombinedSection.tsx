@@ -121,7 +121,7 @@ export default function CombinedSection() {
 								Accessible on desktop and mobile, wherever you are.
 							</p>
 
-							<StaggerContainer className="mt-8 grid grid-cols-2 gap-4">
+							<StaggerContainer className="mt-8 grid lg:grid-cols-2 gap-4">
 								{insights.map((item) => (
 									<StaggerItem key={item.label}>
 										<div className="group flex items-center gap-3 rounded-xl bg-white p-3 shadow-sm border border-slate-100 transition-all hover:shadow-md hover:border-blue-100">

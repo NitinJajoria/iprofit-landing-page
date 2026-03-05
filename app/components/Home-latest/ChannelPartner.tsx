@@ -144,12 +144,22 @@ export default function ChannelPartner() {
 						whileInView={{ opacity: 1, scale: 1 }}
 						viewport={{ once: true }}
 						transition={{ delay: 0.6 }}
-						className="flex justify-center"
+						className="flex justify-center items-center"
 					>
+						{/* I want to conditional render this button based on the screen size in small devices "Join Now" and in large devices "Join the iProfit Partner Network" */}
+						{/* In small devices */}
 						<CTAButton
 							href="https://app.iprofit.in/#/pricing"
 							showIcon
-							className="!px-12"
+							className="md:hidden"
+						>
+							Join Now
+						</CTAButton>
+						{/* In large devices */}
+						<CTAButton
+							href="https://app.iprofit.in/#/pricing"
+							showIcon
+							className="hidden md:block"
 						>
 							Join the iProfit Partner Network
 						</CTAButton>
@@ -187,8 +197,8 @@ export default function ChannelPartner() {
 							className="mx-auto mb-12 max-w-2xl font-outfit text-lg leading-relaxed text-white/90"
 						>
 							Join 15+ enterprises and 11,000+ users who already run their
-							entire business on iProfit. Start your free trial today — no
-							credit card required.
+							entire business on iProfit. Start your free trial today no credit
+							card required.
 						</motion.p>
 
 						<motion.div

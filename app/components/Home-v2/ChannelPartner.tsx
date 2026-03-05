@@ -186,8 +186,8 @@ export default function ChannelPartner() {
 							className="mx-auto mb-12 max-w-2xl font-outfit text-lg leading-relaxed text-white/90"
 						>
 							Join 15+ enterprises and 11,000+ users who already run their
-							entire business on iProfit. Start your free trial today — no
-							credit card required.
+							entire business on iProfit. Start your free trial today no credit
+							card required.
 						</motion.p>
 
 						<motion.div
