@@ -80,7 +80,7 @@ export default function Why() {
 									The Ecosystem
 								</span>
 							</div>
-							<h2 className="font-outfit font-bold leading-[1.1] tracking-tight text-[#0A0A0B] text-[32px] sm:text-[40px] lg:text-[50px]">
+							<h2 className="font-outfit text-[40px] font-bold leading-[1.1] tracking-tight text-[#0A0A0B] sm:text-[50px] lg:text-[64px]">
 								One Platform. <br />
 								<span className="text-[#008ADD]">Infinite Possibilities.</span>
 							</h2>
@@ -158,7 +158,7 @@ export default function Why() {
 													src={mod.image}
 													alt={mod.title}
 													fill
-													className="object-cover object-bottom transition-transform duration-700 group-hover:scale-105"
+													className="object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
 												/>
 												{/* UI overlay element */}
 												<div className="absolute bottom-4 right-4 h-12 w-12 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/50 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
@@ -250,7 +250,7 @@ export default function Why() {
 												src={mod.image}
 												alt={mod.title}
 												fill
-												className="object-cover object-bottom transition-transform duration-700 group-hover:scale-105"
+												className="object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
 											/>
 											{/* UI overlay element */}
 											<div className="absolute bottom-4 right-4 h-12 w-12 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/50 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">

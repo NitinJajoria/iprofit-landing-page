@@ -60,7 +60,7 @@ const CrossIcon = () => (
 
 export default function ComparisonSection() {
 	return (
-		<section className="relative overflow-hidden bg-gradient-to-br from-white to-[#F8FBFF] py-10">
+		<section className="relative overflow-hidden bg-white py-10">
 			{/* High-Fidelity Background Elements */}
 			<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
 				{/* Mesh Gradients */}
@@ -137,15 +137,15 @@ export default function ComparisonSection() {
 							transition={{ duration: 0.8, ease: "circOut" }}
 							className="relative z-10 w-full lg:w-[48%] flex"
 						>
-							<div className="group relative w-full rounded-[2.5rem] bg-white p-8 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.1)] sm:p-12 overflow-hidden flex flex-col">
+							<div className="group relative w-full rounded-[2.5rem] bg-[#1a1a1a] p-8 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.5)] sm:p-12 overflow-hidden flex flex-col">
 								{/* Card Decoration */}
 								<div className="absolute top-0 right-0 h-32 w-32 bg-rose-500/10 blur-[60px]" />
 
 								<div className="relative mb-10 flex items-center justify-between">
-									<h3 className="font-outfit text-2xl font-bold text-[#0D1117] sm:text-3xl">
+									<h3 className="font-outfit text-2xl font-bold text-white sm:text-3xl">
 										Without iProfit
 									</h3>
-									<div className="h-px flex-1 mx-4 bg-gray-200" />
+									<div className="h-px flex-1 mx-4 bg-white/10" />
 									<span className="rounded-full bg-rose-500/10 px-3 py-1 font-outfit text-[10px] font-black uppercase tracking-widest text-rose-400 border border-rose-500/20">
 										Inefficient
 									</span>
@@ -161,10 +161,10 @@ export default function ComparisonSection() {
 											transition={{ delay: 0.2 + idx * 0.1 }}
 											className="flex items-center gap-5 group/item"
 										>
-											<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gray-100 transition-all group-hover/item:bg-rose-500/20 group-hover/item:scale-110">
+											<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 transition-all group-hover/item:bg-rose-500/20 group-hover/item:scale-110">
 												<CrossIcon />
 											</div>
-											<span className="font-outfit text-base font-medium text-[#4B5563] transition-colors group-hover/item:text-[#0D1117] sm:text-lg">
+											<span className="font-outfit text-base font-medium text-white/60 transition-colors group-hover/item:text-white/90 sm:text-lg">
 												{item}
 											</span>
 										</motion.li>
@@ -247,7 +247,7 @@ export default function ComparisonSection() {
 													/>
 												</svg>
 											</div>
-											<span className="font-outfit text-base font-medium text-[#4B5563] transition-colors group-hover/item:text-[#0D1117] sm:text-lg">
+											<span className="font-outfit text-base font-bold text-[#4B5563] transition-colors group-hover/item:text-[#0D1117] sm:text-lg">
 												{item}
 											</span>
 										</motion.li>

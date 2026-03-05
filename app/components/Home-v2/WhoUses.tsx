@@ -1,5 +1,7 @@
 "use client";
 
+// import Image from "next/image";
+// import Link from "next/link";
 import { motion } from "framer-motion";
 import {
 	HiOutlineCodeBracket,
@@ -9,6 +11,36 @@ import {
 	HiOutlineServerStack,
 } from "react-icons/hi2";
 import CTAButton from "../UI/CTAButton";
+
+// const testimonialCards = [
+// 	{
+// 		id: 1,
+// 		name: "Vishal Sood",
+// 		role: "CEO - AlmaBay",
+// 		image: "/vishalsood.jpg",
+// 		description:
+// 			"CEO of AlmaBay with experience in building and scaling technology-driven platforms. Focused on product strategy, partnerships, and business growth.",
+// 		link: "https://www.linkedin.com/in/vishal-sood-3b41b720/?originalSubdomain=in",
+// 	},
+// 	{
+// 		id: 2,
+// 		name: "Vikram R. Singh",
+// 		role: "CEO - Antier",
+// 		image: "/vikramsingh.jpg",
+// 		description:
+// 			"CEO of Antier with extensive experience in blockchain, fintech, and enterprise technology solutions. Leads global teams delivering large-scale digital transformation.",
+// 		link: "https://www.linkedin.com/in/vikramrsingh/?originalSubdomain=in",
+// 	},
+// 	{
+// 		id: 3,
+// 		name: "Maninder Bajwa",
+// 		role: "CEO & Founder",
+// 		image: "/maninderbajwa.jpg",
+// 		description:
+// 			"Founder and CEO with experience in building and scaling IT services and consulting companies. Specializes in enterprise solutions and strategic leadership.",
+// 		link: "https://www.linkedin.com/in/manindersinghbajwa/?originalSubdomain=in",
+// 	},
+// ];
 
 const audiences = [
 	{
@@ -60,12 +92,13 @@ const FadeInUp = ({
 	</motion.div>
 );
 
-export default function WhoUses({}: {
+export default function WhoUses({ }: {
 	title?: string;
 	subtitle?: string;
 	showIndustries?: boolean;
 	isTestimonial?: boolean;
 }) {
+	// Default mode: homepage "Who It's For" section
 	return (
 		<section className="relative bg-[#FAFBFF] py-10">
 			<div className="container z-10 mx-auto px-6 lg:px-20">

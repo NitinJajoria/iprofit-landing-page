@@ -1,26 +1,24 @@
-import Hero from "./components/Home-latest/Hero";
-import Problem from "./components/Home-latest/Problem";
-import Modules from "./components/Home-latest/Modules";
-import WithOrWithout from "./components/Home-latest/WithOrWithout";
-import Measured from "./components/Home-latest/Measured";
-import WhoUses from "./components/Home-latest/WhoUses";
-import BusinessIntelligence from "./components/Home-latest/BusinessIntelligence";
-import WhyFounders from "./components/Home-latest/WhyFounders";
-import StatsSection from "./components/Home-latest/Stats";
-import Testimonials from "./components/Home-latest/Testimonials";
-import ChannelPartner from "./components/Home-latest/ChannelPartner";
+import Hero from "./components/home-latest/Hero";
+import Feedback from "./components/home-latest/Feedback";
+import Modules from "./components/home-latest/Modules";
+import WithOrWithout from "./components/home-latest/WithOrWithout";
+import Measured from "./components/home-latest/Measured";
+import WhoUses from "./components/home-latest/WhoUses";
+import CombinedSection from "./components/home-latest/CombinedSection";
+import StatsSection from "./components/home-latest/StatsSection";
+import Testimonials from "./components/home-latest/Testimonials";
+import ChannelPartner from "./components/home-latest/ChannelPartner";
 
 export default function Home() {
 	return (
 		<main className="flex flex-col bg-white">
 			<Hero />
-			<Problem />
+			<Feedback />
 			<Modules />
-			<WithOrWithout />
 			<Measured />
+			<WithOrWithout />
 			<WhoUses />
-			<BusinessIntelligence />
-			<WhyFounders />
+			<CombinedSection />
 			<StatsSection />
 			<Testimonials />
 			<ChannelPartner />
