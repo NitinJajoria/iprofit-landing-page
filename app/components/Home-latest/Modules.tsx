@@ -22,7 +22,7 @@ const modules = [
 			"Allocation & utilization reports",
 			"Depreciation management",
 		],
-		image: "/landing-page/asset-img.png",
+		image: "/landing-page/asset.png",
 		href: "/asset-management",
 	},
 

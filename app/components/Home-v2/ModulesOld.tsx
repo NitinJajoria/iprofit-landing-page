@@ -65,7 +65,7 @@ const features: FeatureBlock[] = [
 		],
 		color: "#22c55e",
 		reversed: true,
-		image: "/landing-page/asset-img.png",
+		image: "/landing-page/asset.png",
 	},
 	{
 		label: "Inventory",

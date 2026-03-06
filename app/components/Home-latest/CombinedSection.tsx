@@ -10,8 +10,8 @@ import {
 	ShieldAlert,
 	Users,
 	LayoutDashboard,
+	Check,
 } from "lucide-react";
-import { HiCheck } from "react-icons/hi2";
 
 // Animation wrappers inspired by the reference snippet
 const FadeInUp = ({
@@ -75,8 +75,8 @@ const insights = [
 	{ icon: Package, label: "Control Inventory" },
 	{ icon: Target, label: "Measure Performance" },
 	{ icon: ShieldAlert, label: "Anticipate Risks" },
-	{ icon: LayoutDashboard, label: "KPIs by Section" },
-	{ icon: Users, label: "Cross‑Team Collaboration" },
+	// { icon: LayoutDashboard, label: "KPIs by Section" },
+	// { icon: Users, label: "Cross‑Team Collaboration" },
 ];
 
 const reasons = [
@@ -108,7 +108,7 @@ export default function CombinedSection() {
 			<div className="mx-auto container px-10">
 				<div className="max-w-7xl mx-auto grid items-start gap-12 lg:gap-20 lg:grid-cols-2">
 					{/* left Content : Business Intelligence */}
-					<div className="bg-[#F0F9FF] p-6 rounded-2xl">
+					<div className="flex-1 w-full h-full bg-[#F0F9FF] p-6 rounded-2xl">
 						<FadeInUp>
 							<p className="mb-3 text-sm font-semibold tracking-wider text-[#008ADD] uppercase">
 								Business Intelligence
@@ -139,7 +139,7 @@ export default function CombinedSection() {
 					</div>
 
 					{/* Right Content: Why Founders */}
-					<div className="p-6">
+					<div className="flex-1 w-full h-full p-6">
 						<FadeInUp>
 							<p className="mb-3 text-sm font-semibold tracking-wider text-[#008ADD] uppercase">
 								Why Founders Choose Us
@@ -153,8 +153,8 @@ export default function CombinedSection() {
 							{reasons.map((r, idx) => (
 								<StaggerItem key={idx}>
 									<div className="flex gap-4 group">
-										<div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f0fdf4] transition-colors group-hover:bg-[#22c55e] group-hover:text-white">
-											<HiCheck className="h-4 w-4 text-[#22c55e] transition-colors group-hover:text-white" />
+										<div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E0F2FE] transition-colors group-hover:bg-[#008ADD] group-hover:text-white">
+											<Check className="h-4 w-4 text-[#008ADD] transition-colors group-hover:text-white" />
 										</div>
 										<div>
 											<h3 className="font-semibold text-[#0D1117]">
