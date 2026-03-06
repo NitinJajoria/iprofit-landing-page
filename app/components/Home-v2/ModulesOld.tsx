@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { HiOutlineArrowRight } from "react-icons/hi2";
 import CTAButton from "../UI/CTAButton";
+import GradientFrame from "../GradientFrame";
 
 interface FeatureBlock {
 	label: string;
@@ -175,22 +176,17 @@ export default function Modules() {
 							{/* Image Column */}
 							<div className={`${feat.reversed ? "lg:order-1" : ""}`}>
 								<FadeInUp delay={0.2}>
-									<div className="relative group">
-										{/* Glow Behind Image */}
-										<div
-											className="absolute -inset-10 z-0 opacity-10 blur-[80px] rounded-full transition-opacity group-hover:opacity-20"
-											style={{ backgroundColor: feat.color }}
-										/>
-										<div className="relative z-10">
-											<div className="relative aspect-[4/3] w-full">
+									<div className="group">
+										<GradientFrame className="aspect-square w-full">
+											<div className="relative h-full w-full">
 												<Image
 													src={feat.image}
 													alt={feat.title}
 													fill
-													className="object-contain transition-transform duration-700 group-hover:scale-105"
+													className="object-contain transition-transform duration-700 group-hover:scale-105 rounded-3xl"
 												/>
 											</div>
-										</div>
+										</GradientFrame>
 									</div>
 								</FadeInUp>
 							</div>
