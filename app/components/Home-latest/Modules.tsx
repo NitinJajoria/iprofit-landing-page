@@ -12,19 +12,20 @@ const modules = [
 			"Real-time cash flow tracking",
 			"Automated reconciliation",
 		],
-		image: "/landing-page/finance.png",
+		image: "/landing-page/finance-img.png",
 		href: "/finance-accounting",
 	},
 	{
-		title: "HRMS & Payroll",
+		title: "Asset Management",
 		bulletPoints: [
-			"Attendance & leave management",
-			"One-click payroll processing",
-			"Statutory compliance built-in",
+			"Asset lifecycle tracking",
+			"Allocation & utilization reports",
+			"Depreciation management",
 		],
-		image: "/landing-page/payroll.png",
-		href: "/payroll",
+		image: "/landing-page/asset-img.png",
+		href: "/asset-management",
 	},
+
 	{
 		title: "Project Management",
 		bulletPoints: [
@@ -32,7 +33,7 @@ const modules = [
 			"Time & cost tracking",
 			"Margin analysis per project",
 		],
-		image: "/landing-page/project.png",
+		image: "/landing-page/task-img.png",
 		href: "/project-management",
 	},
 	{
@@ -42,18 +43,18 @@ const modules = [
 			"Low-stock alerts",
 			"Purchase order automation",
 		],
-		image: "/landing-page/inventory.png",
+		image: "/landing-page/inventory-img.png",
 		href: "/inventory-management",
 	},
 	{
-		title: "Asset Management",
+		title: "HRMS & Payroll",
 		bulletPoints: [
-			"Asset lifecycle tracking",
-			"Allocation & utilization reports",
-			"Depreciation management",
+			"Attendance & leave management",
+			"One-click payroll processing",
+			"Statutory compliance built-in",
 		],
-		image: "/landing-page/asset.png",
-		href: "/asset-management",
+		image: "/landing-page/hrms-img.png",
+		href: "/payroll",
 	},
 ];
 
@@ -153,12 +154,12 @@ export default function Why() {
 
 										{/* High-fidelity image mock */}
 										<div className="mt-auto px-6 pb-0 group-hover:px-4 transition-all duration-500">
-											<div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl">
+											<div className="relative aspect-square w-full overflow-hidden rounded-t-2xl">
 												<Image
 													src={mod.image}
 													alt={mod.title}
 													fill
-													className="object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
+													className="object-cover transition-transform duration-700 group-hover:scale-105"
 												/>
 												{/* UI overlay element */}
 												<div className="absolute bottom-4 right-4 h-12 w-12 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/50 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
@@ -245,12 +246,12 @@ export default function Why() {
 
 									{/* High-fidelity image mock */}
 									<div className="mt-auto pb-0 group-hover:px-4 transition-all duration-500">
-										<div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl">
+										<div className="relative aspect-square w-full overflow-hidden rounded-t-2xl">
 											<Image
 												src={mod.image}
 												alt={mod.title}
 												fill
-												className="object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
+												className="object-cover object-bottom transition-transform duration-700 group-hover:scale-105"
 											/>
 											{/* UI overlay element */}
 											<div className="absolute bottom-4 right-4 h-12 w-12 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/50 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">

@@ -1,6 +1,7 @@
 import Hero from "../components/Home-v2/Hero";
 import Problem from "../components/Home-v2/Problem";
 import Modules from "../components/Home-v2/Modules";
+import ModulesV2 from "../components/Home-v2/ModulesOld";
 import WithOrWithout from "../components/Home-v2/WithOrWithout";
 import Measured from "../components/Home-v2/Measured";
 import WhoUses from "../components/Home-v2/WhoUses";
@@ -16,6 +17,7 @@ export default function Home() {
 			<Hero />
 			<Problem />
 			<Modules />
+			<ModulesV2 />
 			<Measured />
 			<WithOrWithout />
 			<WhoUses />
