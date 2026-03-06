@@ -63,8 +63,12 @@ export default function StatsSection() {
 				{/* Premium Light Container */}
 				<div className="relative rounded-[3rem] lg:rounded-[4rem] bg-gradient-to-b from-[#F0F9FF] to-[#FFFFFF] py-10 px-10 overflow-hidden border border-blue-100/50 shadow-[0_20px_50px_-20px_rgba(0,138,221,0.1)]">
 					{/* Background Data Grid Pattern */}
-					<div className="absolute inset-0 opacity-[0.05] pointer-events-none"
-						style={{ backgroundImage: 'radial-gradient(#008ADD 1px, transparent 1px)', backgroundSize: '40px 40px' }}
+					<div
+						className="absolute inset-0 opacity-[0.05] pointer-events-none"
+						style={{
+							backgroundImage: "radial-gradient(#008ADD 1px, transparent 1px)",
+							backgroundSize: "40px 40px",
+						}}
 					/>
 
 					{/* Soft Gradient Orbs */}
@@ -80,9 +84,14 @@ export default function StatsSection() {
 								</span>
 							</div>
 							<h2 className="font-outfit text-[44px] font-bold leading-[1.1] text-[#0D1117] sm:text-[56px] lg:text-[72px] tracking-tighter">
-								Numbers That <span className="text-[#008ADD] relative">
+								Numbers That{" "}
+								<span className="text-[#008ADD] relative">
 									Speak
-									<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
+									<svg
+										className="absolute -bottom-2 left-0 w-full"
+										viewBox="0 0 200 8"
+										fill="none"
+									>
 										<motion.path
 											initial={{ pathLength: 0 }}
 											whileInView={{ pathLength: 1 }}
@@ -113,9 +122,9 @@ export default function StatsSection() {
 									)}
 
 									{/* Watermark Index */}
-									<div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-[0.06] font-outfit text-9xl font-black text-[#008ADD] select-none transition-all duration-700 group-hover:opacity-[0.12] group-hover:-translate-y-4">
+									{/* <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-[0.06] font-outfit text-9xl font-black text-[#008ADD] select-none transition-all duration-700 group-hover:opacity-[0.12] group-hover:-translate-y-4">
 										0{idx + 1}
-									</div>
+									</div> */}
 
 									{/* Floating Node Icon */}
 									<div

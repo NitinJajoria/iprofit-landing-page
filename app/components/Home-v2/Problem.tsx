@@ -105,11 +105,11 @@ export default function Feedback() {
 								<div className="lg:w-1/2 flex justify-center">
 									<div className="relative">
 										{/* Watermark Index - Matches Stats style */}
-										<div
+										{/* <div
 											className={`absolute -top-16 ${i % 2 === 1 ? "-right-8" : "-left-8"} opacity-[0.05] font-outfit text-[120px] font-black text-[#008ADD] select-none transition-all duration-700 group-hover:opacity-[0.15] group-hover:-translate-y-4`}
 										>
 											0{i + 1}
-										</div>
+										</div> */}
 
 										<div
 											className={`flex h-24 w-24 items-center justify-center rounded-full bg-white text-[#008ADD] shadow-[0_20px_40px_rgba(0,138,221,0.08)] transition-all duration-700 group-hover:bg-[#008ADD] group-hover:text-white group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-[0_30px_60px_rgba(0,138,221,0.3)] border border-[#008ADD]/5 relative z-10`}

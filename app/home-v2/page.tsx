@@ -1,6 +1,6 @@
 import Hero from "../components/Home-v2/Hero";
 import Problem from "../components/Home-v2/Problem";
-import Modules from "../components/Home-v2/Modules";
+// import Modules from "../components/Home-v2/Modules";
 import ModulesV2 from "../components/Home-v2/ModulesOld";
 import WithOrWithout from "../components/Home-v2/WithOrWithout";
 import Measured from "../components/Home-v2/Measured";
@@ -16,7 +16,7 @@ export default function Home() {
 		<main className="flex flex-col bg-white">
 			<Hero />
 			<Problem />
-			<Modules />
+			{/* <Modules /> */}
 			<ModulesV2 />
 			<Measured />
 			<WithOrWithout />
