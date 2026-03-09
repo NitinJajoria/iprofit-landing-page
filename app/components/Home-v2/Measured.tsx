@@ -164,7 +164,7 @@ export default function Measured() {
 					>
 						<div className="relative z-10">
 							<Image
-								src="/measured.png"
+								src="/landing-page/mobile.png"
 								alt="iProfit unified business dashboard"
 								width={600}
 								height={500}

@@ -1,0 +1,472 @@
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f0f5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Sora', sans-serif;
+    overflow: hidden;
+  }
+
+  .scene {
+    position: relative;
+    width: 700px;
+    height: 700px;
+  }
+
+  /* Ambient glow background */
+  .scene::before {
+    content: '';
+    position: absolute;
+    inset: 50px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center,
+      rgba(99,179,237,0.15) 0%,
+      rgba(129,140,248,0.08) 40%,
+      transparent 70%);
+    animation: pulse-bg 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-bg {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  svg.connections {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Center hub */
+  .hub {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffffff 0%, #e8f0fe 100%);
+    border: 2px solid rgba(99,130,237,0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow:
+      0 0 40px rgba(99,130,237,0.2),
+      0 8px 32px rgba(99,130,237,0.15),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+    animation: hub-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes hub-pulse {
+    0%, 100% { box-shadow: 0 0 40px rgba(99,130,237,0.2), 0 8px 32px rgba(99,130,237,0.15), inset 0 1px 0 rgba(255,255,255,0.9); }
+    50% { box-shadow: 0 0 60px rgba(99,130,237,0.35), 0 8px 48px rgba(99,130,237,0.2), inset 0 1px 0 rgba(255,255,255,0.9); }
+  }
+
+  .hub-icon {
+    font-size: 32px;
+    margin-bottom: 6px;
+  }
+
+  .hub-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2d3a8c;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hub-sub {
+    font-size: 9px;
+    color: rgba(80,100,200,0.6);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* Module nodes */
+  .module {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .module:hover {
+    transform: scale(1.1) translateY(-4px);
+  }
+
+  .module:hover .module-inner {
+    box-shadow: var(--hover-shadow);
+  }
+
+  .module-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid var(--border-color);
+    background: var(--bg);
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .module-inner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .module-icon {
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+
+  .module-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-color);
+  }
+
+  /* Individual module colors */
+  .mod-assets {
+    --bg: linear-gradient(145deg, #e0f2fe 0%, #bae6fd 100%);
+    --border-color: rgba(14,165,233,0.4);
+    --shadow: 0 0 20px rgba(14,165,233,0.2), 0 8px 24px rgba(14,165,233,0.1);
+    --hover-shadow: 0 0 40px rgba(14,165,233,0.4), 0 12px 32px rgba(14,165,233,0.2);
+    --text-color: #0369a1;
+  }
+
+  .mod-analytics {
+    --bg: linear-gradient(145deg, #ede9fe 0%, #ddd6fe 100%);
+    --border-color: rgba(124,58,237,0.4);
+    --shadow: 0 0 20px rgba(124,58,237,0.2), 0 8px 24px rgba(124,58,237,0.1);
+    --hover-shadow: 0 0 40px rgba(124,58,237,0.4), 0 12px 32px rgba(124,58,237,0.2);
+    --text-color: #5b21b6;
+  }
+
+  .mod-finance {
+    --bg: linear-gradient(145deg, #cffafe 0%, #a5f3fc 100%);
+    --border-color: rgba(6,182,212,0.4);
+    --shadow: 0 0 20px rgba(6,182,212,0.2), 0 8px 24px rgba(6,182,212,0.1);
+    --hover-shadow: 0 0 40px rgba(6,182,212,0.4), 0 12px 32px rgba(6,182,212,0.2);
+    --text-color: #0e7490;
+  }
+
+  .mod-hr {
+    --bg: linear-gradient(145deg, #ffe4e6 0%, #fecdd3 100%);
+    --border-color: rgba(225,29,72,0.4);
+    --shadow: 0 0 20px rgba(225,29,72,0.15), 0 8px 24px rgba(225,29,72,0.1);
+    --hover-shadow: 0 0 40px rgba(225,29,72,0.3), 0 12px 32px rgba(225,29,72,0.15);
+    --text-color: #9f1239;
+  }
+
+  .mod-projects {
+    --bg: linear-gradient(145deg, #ecfccb 0%, #d9f99d 100%);
+    --border-color: rgba(101,163,13,0.4);
+    --shadow: 0 0 20px rgba(101,163,13,0.2), 0 8px 24px rgba(101,163,13,0.1);
+    --hover-shadow: 0 0 40px rgba(101,163,13,0.4), 0 12px 32px rgba(101,163,13,0.2);
+    --text-color: #3f6212;
+  }
+
+  /* Dot indicator */
+  .dot {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--dot-color, #4ade80);
+    box-shadow: 0 0 8px var(--dot-color, #4ade80);
+    animation: dot-blink 2s ease-in-out infinite;
+  }
+
+  @keyframes dot-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* SVG connection lines */
+  .connection-line {
+    fill: none;
+    stroke-width: 1.5;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: draw-line 1.5s ease forwards;
+  }
+
+  @keyframes draw-line {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Traveling dot animation */
+  .travel-dot {
+    r: 3;
+  }
+
+  /* Module label below */
+  .module-name {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(200,220,255,0.7);
+  }
+
+  /* Floating particles */
+  .particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(99,179,237,0.6);
+    animation: float-particle linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes float-particle {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+  }
+
+  /* Orbit ring */
+  .orbit-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    border: 1px dashed rgba(99,130,237,0.2);
+    animation: orbit-spin 30s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes orbit-spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  /* Stagger module animations */
+  .module { animation: appear 0.6s ease both; }
+  .module:nth-child(1) { animation-delay: 0.2s; }
+  .module:nth-child(2) { animation-delay: 0.35s; }
+  .module:nth-child(3) { animation-delay: 0.5s; }
+  .module:nth-child(4) { animation-delay: 0.65s; }
+  .module:nth-child(5) { animation-delay: 0.8s; }
+
+  @keyframes appear {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .hub { animation: hub-appear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both; }
+
+  @keyframes hub-appear {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<div class="scene">
+
+  <!-- Orbit ring decoration -->
+  <div class="orbit-ring"></div>
+
+  <!-- SVG connections layer -->
+  <svg class="connections" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Glowing line gradients -->
+      <linearGradient id="g-assets" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.3"/>
+      </linearGradient>
+      <linearGradient id="g-analytics" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.3"/>
+      </linearGradient>
+      <linearGradient id="g-finance" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.3"/>
+      </linearGradient>
+      <linearGradient id="g-hr" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#e11d48" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#e11d48" stop-opacity="0.3"/>
+      </linearGradient>
+      <linearGradient id="g-projects" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#65a30d" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#65a30d" stop-opacity="0.3"/>
+      </linearGradient>
+
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+
+    <!-- Connection lines hub → modules -->
+    <!-- Assets (top center) 350,120 -->
+    <line x1="350" y1="350" x2="350" y2="175" stroke="url(#g-assets)" stroke-width="1.5" filter="url(#glow)"
+          stroke-dasharray="180" stroke-dashoffset="180" style="animation: draw-line 1s 0.5s ease forwards;">
+    </line>
+    <!-- Analytics (right) 560,225 -->
+    <line x1="350" y1="350" x2="513" y2="230" stroke="url(#g-analytics)" stroke-width="1.5" filter="url(#glow)"
+          stroke-dasharray="180" stroke-dashoffset="180" style="animation: draw-line 1s 0.65s ease forwards;">
+    </line>
+    <!-- Finance (bottom right) 530,470 -->
+    <line x1="350" y1="350" x2="505" y2="465" stroke="url(#g-finance)" stroke-width="1.5" filter="url(#glow)"
+          stroke-dasharray="180" stroke-dashoffset="180" style="animation: draw-line 1s 0.8s ease forwards;">
+    </line>
+    <!-- HR (left) 140,225 -->
+    <line x1="350" y1="350" x2="187" y2="230" stroke="url(#g-hr)" stroke-width="1.5" filter="url(#glow)"
+          stroke-dasharray="180" stroke-dashoffset="180" style="animation: draw-line 1s 0.95s ease forwards;">
+    </line>
+    <!-- Projects (bottom left) 170,470 -->
+    <line x1="350" y1="350" x2="195" y2="465" stroke="url(#g-projects)" stroke-width="1.5" filter="url(#glow)"
+          stroke-dasharray="180" stroke-dashoffset="180" style="animation: draw-line 1s 1.1s ease forwards;">
+    </line>
+
+    <!-- Outer ring arcs connecting modules to each other -->
+    <path d="M 350,120 Q 530,120 560,225" fill="none" stroke="rgba(14,165,233,0.25)" stroke-width="1.5" stroke-dasharray="6,8"/>
+    <path d="M 560,225 Q 600,370 530,470" fill="none" stroke="rgba(124,58,237,0.25)" stroke-width="1.5" stroke-dasharray="6,8"/>
+    <path d="M 530,470 Q 350,570 170,470" fill="none" stroke="rgba(6,182,212,0.25)" stroke-width="1.5" stroke-dasharray="6,8"/>
+    <path d="M 170,470 Q 100,340 140,225" fill="none" stroke="rgba(225,29,72,0.25)" stroke-width="1.5" stroke-dasharray="6,8"/>
+    <path d="M 140,225 Q 210,100 350,120" fill="none" stroke="rgba(101,163,13,0.25)" stroke-width="1.5" stroke-dasharray="6,8"/>
+
+    <!-- Animated traveling dots on lines -->
+    <circle r="4" fill="#0ea5e9" filter="url(#glow)" opacity="0.9">
+      <animateMotion dur="2.5s" repeatCount="indefinite" begin="1s">
+        <mpath href="#path-assets"/>
+      </animateMotion>
+    </circle>
+    <path id="path-assets" d="M 350,350 L 350,175" style="display:none"/>
+
+    <circle r="4" fill="#7c3aed" filter="url(#glow)" opacity="0.9">
+      <animateMotion dur="2.5s" repeatCount="indefinite" begin="1.5s">
+        <mpath href="#path-analytics"/>
+      </animateMotion>
+    </circle>
+    <path id="path-analytics" d="M 350,350 L 513,230" style="display:none"/>
+
+    <circle r="4" fill="#06b6d4" filter="url(#glow)" opacity="0.9">
+      <animateMotion dur="2.5s" repeatCount="indefinite" begin="2s">
+        <mpath href="#path-finance"/>
+      </animateMotion>
+    </circle>
+    <path id="path-finance" d="M 350,350 L 505,465" style="display:none"/>
+
+    <circle r="4" fill="#e11d48" filter="url(#glow)" opacity="0.9">
+      <animateMotion dur="2.5s" repeatCount="indefinite" begin="2.5s">
+        <mpath href="#path-hr"/>
+      </animateMotion>
+    </circle>
+    <path id="path-hr" d="M 350,350 L 187,230" style="display:none"/>
+
+    <circle r="4" fill="#65a30d" filter="url(#glow)" opacity="0.9">
+      <animateMotion dur="2.5s" repeatCount="indefinite" begin="3s">
+        <mpath href="#path-projects"/>
+      </animateMotion>
+    </circle>
+    <path id="path-projects" d="M 350,350 L 195,465" style="display:none"/>
+  </svg>
+
+  <div class="hub">
+    <img
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iProfit-Fs6nCTJOnVonPcC0aUjB4QnvUBamf8.png"
+      alt="iProfit logo"
+      style="height: 32px; width: auto; margin-bottom: 4px;"
+    />
+    <div class="hub-label" style="color: #008ADD;">iProfit</div>
+    <div class="hub-sub">Your operating backbone.</div>
+  </div>
+
+  <!-- Assets module — top center -->
+  <div class="module" style="left: calc(50% - 55px); top: 65px;">
+    <div class="module-inner mod-assets">
+      <div class="dot" style="--dot-color: #0ea5e9;"></div>
+      <div class="module-icon">🏢</div>
+      <div class="module-label" style="color:#0369a1;">Assets</div>
+    </div>
+  </div>
+
+  <!-- Analytics module — upper right -->
+  <div class="module" style="left: 458px; top: 175px;">
+    <div class="module-inner mod-analytics">
+      <div class="dot" style="--dot-color: #7c3aed;"></div>
+      <div class="module-icon">📊</div>
+      <div class="module-label" style="color:#5b21b6;">Analytics</div>
+    </div>
+  </div>
+
+  <!-- Finance module — lower right -->
+  <div class="module" style="left: 450px; top: 410px;">
+    <div class="module-inner mod-finance">
+      <div class="dot" style="--dot-color: #06b6d4;"></div>
+      <div class="module-icon">💰</div>
+      <div class="module-label" style="color:#0e7490;">Finance</div>
+    </div>
+  </div>
+
+  <!-- HR module — upper left -->
+  <div class="module" style="left: 132px; top: 175px;">
+    <div class="module-inner mod-hr">
+      <div class="dot" style="--dot-color: #e11d48;"></div>
+      <div class="module-icon">👥</div>
+      <div class="module-label" style="color:#9f1239;">HR</div>
+    </div>
+  </div>
+
+  <!-- Projects module — lower left -->
+  <div class="module" style="left: 140px; top: 410px;">
+    <div class="module-inner mod-projects">
+      <div class="dot" style="--dot-color: #65a30d;"></div>
+      <div class="module-icon">📋</div>
+      <div class="module-label" style="color:#3f6212;">Projects</div>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  /* Apply draw-line animation using inline styles */
+  @keyframes draw-line {
+    to { stroke-dashoffset: 0; }
+  }
+  svg line {
+    animation: draw-line 1s ease forwards;
+  }
+</style>

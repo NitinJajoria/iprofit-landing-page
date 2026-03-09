@@ -110,16 +110,16 @@ export default function ComparisonSection() {
 
 				{/* Side-by-Side Comparison Layout */}
 				<div className="relative mx-auto max-w-6xl py-6">
-					<div className="relative flex flex-col lg:flex-row lg:items-center justify-center gap-5">
+					<div className="relative flex flex-col lg:flex-row lg:items-stretch justify-center gap-5">
 						{/* Card 1: Without iProfit */}
 						<motion.div
 							initial={{ opacity: 0, x: -30 }}
 							whileInView={{ opacity: 1, x: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.8, ease: "circOut" }}
-							className="relative z-10 w-full lg:w-[48%] flex"
+							className="relative z-10 w-full flex-1"
 						>
-							<div className="group relative w-full rounded-[2.5rem] bg-white p-8 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.1)] sm:p-12 overflow-hidden flex flex-col">
+							<div className="group relative w-full rounded-[2.5rem] bg-white p-8 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.1)] sm:p-12 overflow-hidden flex flex-col h-full">
 								{/* Card Decoration */}
 								<div className="absolute top-0 right-0 h-32 w-32 bg-rose-500/10 blur-[60px]" />
 
@@ -156,7 +156,7 @@ export default function ComparisonSection() {
 						</motion.div>
 
 						{/* Central Versus Element - Positioned Absolutely to overlap */}
-						<div className="relative lg:static flex items-center justify-center lg:z-30 py-6 lg:py-0 lg:-mx-10 shrink-0">
+						<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
 							<motion.div
 								animate={{
 									scale: [1, 1.15, 1],
@@ -185,10 +185,10 @@ export default function ComparisonSection() {
 							whileInView={{ opacity: 1, x: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.8, ease: "circOut" }}
-							className="relative z-20 w-full lg:w-[48%] flex"
+							className="relative z-20 w-full flex-1 flex"
 						>
 							{/* Premium Glassmorphism Container */}
-							<div className="group relative w-full rounded-[2.5rem] border border-white/20 bg-white/70 backdrop-blur-3xl p-8 shadow-[0_60px_120px_-30px_rgba(0,138,221,0.2)] sm:p-12 overflow-hidden flex flex-col">
+							<div className="group relative w-full rounded-[2.5rem] border border-white/20 bg-white/70 backdrop-blur-3xl p-8 shadow-[0_60px_120px_-30px_rgba(0,138,221,0.2)] sm:p-12 overflow-hidden flex flex-col h-full">
 								{/* Interactive Glow Element */}
 								<div className="absolute -top-20 -right-20 h-64 w-64 bg-[#008ADD]/10 blur-[80px] group-hover:bg-[#008ADD]/20 transition-colors duration-700" />
 
