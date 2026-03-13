@@ -12,7 +12,7 @@ const modules = [
 			"Real-time cash flow tracking",
 			"Automated reconciliation",
 		],
-		image: "/landing-page/finance-img.png",
+		image: "/landing-page/new/finance-accounting.png",
 		href: "/finance-accounting",
 	},
 	{
@@ -22,7 +22,7 @@ const modules = [
 			"Allocation & utilization reports",
 			"Depreciation management",
 		],
-		image: "/landing-page/asset-img.png",
+		image: "/landing-page/new/asset-management.png",
 		href: "/asset-management",
 	},
 
@@ -33,7 +33,7 @@ const modules = [
 			"Time & cost tracking",
 			"Margin analysis per project",
 		],
-		image: "/landing-page/task-img.png",
+		image: "/landing-page/new/project-management.png",
 		href: "/project-management",
 	},
 	{
@@ -43,7 +43,7 @@ const modules = [
 			"Low-stock alerts",
 			"Purchase order automation",
 		],
-		image: "/landing-page/inventory-img.png",
+		image: "/landing-page/new/inventory-management.png",
 		href: "/inventory-management",
 	},
 	{
@@ -53,7 +53,7 @@ const modules = [
 			"One-click payroll processing",
 			"Statutory compliance built-in",
 		],
-		image: "/landing-page/hrms-img.png",
+		image: "/landing-page/new/hrms-payroll.png",
 		href: "/payroll",
 	},
 ];
