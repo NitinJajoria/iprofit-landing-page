@@ -189,11 +189,11 @@ export default function Measured() {
 						>
 							<div className="relative z-10">
 								<Image
-									src="/landing-page/new/iphone-ipad-mockup.png"
+									src="/landing-page/new/mockup-img.png"
 									alt="iProfit unified business dashboard"
 									width={600}
 									height={500}
-									className="h-auto max-h-[500px] w-full object-contain"
+									className="h-auto max-h-[600px] w-full object-cover"
 									priority
 								/>
 							</div>
