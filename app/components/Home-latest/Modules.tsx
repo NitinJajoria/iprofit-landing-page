@@ -22,7 +22,7 @@ const modules = [
 			"Allocation & utilization reports",
 			"Depreciation management",
 		],
-		image: "/landing-page/new/asset-management-img.png",
+		image: "/landing-page/new/asset-management.png",
 		href: "/asset-management",
 	},
 
@@ -33,7 +33,7 @@ const modules = [
 			"Time & cost tracking",
 			"Margin analysis per project",
 		],
-		image: "/landing-page/new/project-management-img.png",
+		image: "/landing-page/new/project-management.png",
 		href: "/project-management",
 	},
 	{
@@ -43,7 +43,7 @@ const modules = [
 			"Low-stock alerts",
 			"Purchase order automation",
 		],
-		image: "/landing-page/new/inventory-management-img.png",
+		image: "/landing-page/new/inventory-management.png",
 		href: "/inventory-management",
 	},
 	{

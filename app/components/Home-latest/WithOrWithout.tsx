@@ -9,7 +9,7 @@ const withIProfit = [
 	"Aligned cross-functional teams",
 	"Single source of truth",
 	"Built-in compliance automation",
-	"CEO Visibility through the mobile app anytime, anywhere",
+	"CEO's Visibility through the mobile app anytime, anywhere",
 ];
 
 const withoutIProfit = [
@@ -17,9 +17,9 @@ const withoutIProfit = [
 	"Missed follow-ups & deadlines",
 	"Poor project visibility",
 	"Reactive firefighting",
-	"Data in silos – Excel, email, chat",
+	"Data in silos – excel, email, chat",
 	"Compliance risk every quarter",
-	"CEO in the dark until month-end reports",
+	"CEO's in the dark until month-end reports",
 ];
 
 const CrossIcon = () => (
@@ -198,7 +198,7 @@ export default function ComparisonSection() {
 									</h3>
 									<div className="h-px flex-1 mx-4 bg-[#008ADD]/10" />
 									<span className="rounded-full bg-emerald-500/10 px-3 py-1 font-outfit text-[10px] font-black uppercase tracking-widest text-emerald-600 border border-emerald-500/20">
-										optimized
+										Optimized
 									</span>
 								</div>
 

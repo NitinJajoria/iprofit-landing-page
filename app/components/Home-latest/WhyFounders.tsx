@@ -2,6 +2,14 @@
 
 import { motion } from "framer-motion";
 import { HiCheck } from "react-icons/hi2";
+import {
+	Calculator,
+	ChartColumn,
+	ClipboardList,
+	HandCoins,
+	Landmark,
+	FileChartColumn,
+} from "lucide-react";
 
 const reasons = [
 	{
@@ -26,61 +34,45 @@ const reasons = [
 	},
 ];
 
-const MODULES = [
+const DIAGRAM_MODULES = [
 	{
-		label: "Assets",
-		icon: "🏢",
-		color: "#0ea5e9",
-		bg0: "#e0f2fe",
-		bg1: "#bae6fd",
-		text: "#0369a1",
+		lines: ["Finance &", "Accounting"],
+		icon: Calculator,
 	},
 	{
-		label: "Analytics",
-		icon: "📊",
-		color: "#7c3aed",
-		bg0: "#ede9fe",
-		bg1: "#ddd6fe",
-		text: "#5b21b6",
+		lines: ["Inventory", "Management"],
+		icon: ClipboardList,
 	},
 	{
-		label: "Finance",
-		icon: "💰",
-		color: "#06b6d4",
-		bg0: "#cffafe",
-		bg1: "#a5f3fc",
-		text: "#0e7490",
+		lines: ["Asset", "Management"],
+		icon: Landmark,
 	},
 	{
-		label: "Projects",
-		icon: "📋",
-		color: "#65a30d",
-		bg0: "#ecfccb",
-		bg1: "#d9f99d",
-		text: "#3f6212",
+		lines: ["HRMS &", "Payroll"],
+		icon: HandCoins,
 	},
 	{
-		label: "HR",
-		icon: "👥",
-		color: "#e11d48",
-		bg0: "#ffe4e6",
-		bg1: "#fecdd3",
-		text: "#9f1239",
+		lines: ["Project", "Management"],
+		icon: FileChartColumn,
 	},
-];
+	{
+		lines: ["Dashboard &", "Analytics"],
+		icon: ChartColumn,
+	},
+] as const;
 
-const SVG_SIZE = 420;
-const CX = SVG_SIZE / 2; // 210
-const CY = SVG_SIZE / 2; // 210
-const ORBIT_R = 148; // orbit radius
-const NODE_R = 46; // module bubble radius
-const HUB_R = 66; // centre hub radius
+const DIAGRAM_SIZE = 500;
+const DIAGRAM_CX = DIAGRAM_SIZE / 2;
+const DIAGRAM_CY = DIAGRAM_SIZE / 2;
+const DIAGRAM_ORBIT_R = 150;
+const DIAGRAM_NODE_R = 30;
+const DIAGRAM_HUB_R = 70;
 
-function getPos(i: number) {
-	const angle = (2 * Math.PI * i) / MODULES.length - Math.PI / 2;
+function getModulePosition(i: number) {
+	const angle = (2 * Math.PI * i) / DIAGRAM_MODULES.length - Math.PI / 2;
 	return {
-		x: CX + ORBIT_R * Math.cos(angle),
-		y: CY + ORBIT_R * Math.sin(angle),
+		x: DIAGRAM_CX + DIAGRAM_ORBIT_R * Math.cos(angle),
+		y: DIAGRAM_CY + DIAGRAM_ORBIT_R * Math.sin(angle),
 	};
 }
 
@@ -138,252 +130,152 @@ const StaggerItem = ({ children }: { children: React.ReactNode }) => (
 function PlatformDiagram() {
 	return (
 		<svg
-			viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
+			viewBox={`0 0 ${DIAGRAM_SIZE} ${DIAGRAM_SIZE}`}
 			xmlns="http://www.w3.org/2000/svg"
 			className="w-full h-full"
 		>
 			<defs>
-				{/* Module radial fills */}
-				{MODULES.map((m, i) => (
-					<radialGradient
-						key={`bg-${i}`}
-						id={`bg-${i}`}
-						cx="38%"
-						cy="32%"
-						r="68%"
-					>
-						<stop offset="0%" stopColor={m.bg0} />
-						<stop offset="100%" stopColor={m.bg1} />
-					</radialGradient>
-				))}
-				{/* Spoke line gradients */}
-				{MODULES.map((m, i) => (
-					<linearGradient
-						key={`lg-${i}`}
-						id={`lg-${i}`}
-						x1={CX}
-						y1={CY}
-						x2={getPos(i).x}
-						y2={getPos(i).y}
-						gradientUnits="userSpaceOnUse"
-					>
-						<stop offset="0%" stopColor={m.color} stopOpacity="0.8" />
-						<stop offset="100%" stopColor={m.color} stopOpacity="0.2" />
-					</linearGradient>
-				))}
-				{/* Hub gradient */}
-				<radialGradient id="hub-fill" cx="38%" cy="32%" r="72%">
+				<radialGradient id="hubGradient" cx="50%" cy="50%" r="65%">
 					<stop offset="0%" stopColor="#ffffff" />
-					<stop offset="100%" stopColor="#dbeafe" />
+					<stop offset="100%" stopColor="#e5f0ff" />
 				</radialGradient>
-				{/* Glow filter */}
-				<filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-					<feGaussianBlur stdDeviation="3.5" result="b" />
-					<feMerge>
-						<feMergeNode in="b" />
-						<feMergeNode in="SourceGraphic" />
-					</feMerge>
-				</filter>
-				{/* Drop shadow */}
-				<filter id="dshadow" x="-25%" y="-25%" width="150%" height="150%">
+				<filter id="nodeShadow" x="-30%" y="-30%" width="160%" height="160%">
 					<feDropShadow
 						dx="0"
 						dy="3"
-						stdDeviation="7"
-						floodColor="rgba(30,64,175,0.10)"
+						stdDeviation="5"
+						floodColor="rgba(15,23,42,0.15)"
 					/>
 				</filter>
-				{/* Clip each module bubble */}
-				{MODULES.map((_, i) => {
-					const p = getPos(i);
-					return (
-						<clipPath key={`clip-${i}`} id={`clip-${i}`}>
-							<circle cx={p.x} cy={p.y} r={NODE_R} />
-						</clipPath>
-					);
-				})}
+				<filter id="hubShadow" x="-25%" y="-25%" width="150%" height="150%">
+					<feDropShadow
+						dx="0"
+						dy="4"
+						stdDeviation="8"
+						floodColor="rgba(15,23,42,0.20)"
+					/>
+				</filter>
 			</defs>
 
-			{/* ── Outer dashed orbit ring ── */}
 			<circle
-				cx={CX}
-				cy={CY}
-				r={ORBIT_R}
+				cx={DIAGRAM_CX}
+				cy={DIAGRAM_CY}
+				r={DIAGRAM_ORBIT_R}
 				fill="none"
-				stroke="rgba(99,130,237,0.20)"
-				strokeWidth="1.5"
-				strokeDasharray="7 9"
+				stroke="#22c55e"
+				strokeOpacity={0.35}
+				strokeWidth="1.6"
 			/>
 
-			{/* ── Spokes ── */}
-			{MODULES.map((m, i) => {
-				const p = getPos(i);
-				const dx = p.x - CX,
-					dy = p.y - CY;
-				const dist = Math.sqrt(dx * dx + dy * dy);
-				const ux = dx / dist,
-					uy = dy / dist;
-				const x1 = CX + ux * (HUB_R + 5);
-				const y1 = CY + uy * (HUB_R + 5);
-				const x2 = p.x - ux * (NODE_R + 5);
-				const y2 = p.y - uy * (NODE_R + 5);
-				const len = Math.hypot(x2 - x1, y2 - y1);
-				return (
-					<line
-						key={`spoke-${i}`}
-						x1={x1}
-						y1={y1}
-						x2={x2}
-						y2={y2}
-						stroke={`url(#lg-${i})`}
-						strokeWidth="1.8"
-						filter="url(#glow)"
-						strokeDasharray={len}
-						strokeDashoffset={len}
-						style={{
-							animation: `wfDrawLine 0.9s ${0.35 + i * 0.14}s ease forwards`,
-						}}
-					/>
-				);
-			})}
-
-			{/* ── Travelling particles ── */}
-			{MODULES.map((m, i) => {
-				const p = getPos(i);
-				const dx = p.x - CX,
-					dy = p.y - CY;
-				const dist = Math.sqrt(dx * dx + dy * dy);
-				const ux = dx / dist,
-					uy = dy / dist;
-				const x1 = CX + ux * (HUB_R + 5);
-				const y1 = CY + uy * (HUB_R + 5);
-				const x2 = p.x - ux * (NODE_R + 5);
-				const y2 = p.y - uy * (NODE_R + 5);
-				return (
-					<circle
-						key={`particle-${i}`}
-						r="3.5"
-						fill={m.color}
-						filter="url(#glow)"
-						opacity="0.9"
-					>
-						<animateMotion
-							dur="2.4s"
-							repeatCount="indefinite"
-							begin={`${0.9 + i * 0.48}s`}
-							path={`M ${x1},${y1} L ${x2},${y2}`}
-						/>
-					</circle>
-				);
-			})}
-
-			{/* ── Module bubbles ── */}
-			{MODULES.map((m, i) => {
-				const { x, y } = getPos(i);
-				return (
-					<g key={`mod-${i}`} filter="url(#dshadow)">
-						{/* Fill */}
-						<circle cx={x} cy={y} r={NODE_R} fill={`url(#bg-${i})`} />
-						{/* Border */}
-						<circle
-							cx={x}
-							cy={y}
-							r={NODE_R}
-							fill="none"
-							stroke={m.color}
-							strokeWidth="1.5"
-							strokeOpacity="0.45"
-						/>
-						{/* Shine */}
-						<ellipse
-							cx={x - NODE_R * 0.18}
-							cy={y - NODE_R * 0.22}
-							rx={NODE_R * 0.42}
-							ry={NODE_R * 0.26}
-							fill="rgba(255,255,255,0.42)"
-						/>
-						{/* Icon */}
-						<text
-							x={x}
-							y={y + 4}
-							textAnchor="middle"
-							dominantBaseline="middle"
-							fontSize="22"
-						>
-							{m.icon}
-						</text>
-						{/* Label */}
-						<text
-							x={x}
-							y={y + NODE_R - 9}
-							textAnchor="middle"
-							fontSize="8.5"
-							fontWeight="700"
-							fill={m.text}
-							letterSpacing="0.10em"
-							fontFamily="ui-sans-serif, system-ui, sans-serif"
-						>
-							{m.label.toUpperCase()}
-						</text>
-					</g>
-				);
-			})}
-
-			{/* ── Hub pulse ring ── */}
-			<circle
-				cx={CX}
-				cy={CY}
-				r={HUB_R}
-				fill="none"
-				stroke="rgba(59,130,246,0.22)"
-				strokeWidth="2"
-			>
-				<animate
-					attributeName="r"
-					values={`${HUB_R};${HUB_R + 12};${HUB_R}`}
-					dur="3s"
-					repeatCount="indefinite"
-				/>
-				<animate
-					attributeName="opacity"
-					values="0.55;0;0.55"
-					dur="3s"
-					repeatCount="indefinite"
-				/>
-			</circle>
-
-			{/* ── Centre hub ── */}
-			<g filter="url(#dshadow)">
-				<circle cx={CX} cy={CY} r={HUB_R} fill="url(#hub-fill)" />
+			<g filter="url(#hubShadow)">
 				<circle
-					cx={CX}
-					cy={CY}
-					r={HUB_R}
+					cx={DIAGRAM_CX}
+					cy={DIAGRAM_CY}
+					r={DIAGRAM_HUB_R}
+					fill="url(#hubGradient)"
+				/>
+				<circle
+					cx={DIAGRAM_CX}
+					cy={DIAGRAM_CY}
+					r={DIAGRAM_HUB_R}
 					fill="none"
-					stroke="rgba(99,130,237,0.38)"
-					strokeWidth="2"
+					// stroke="#d1d5db"
+					// strokeWidth="1.5"
 				/>
-				{/* Shine */}
-				<ellipse
-					cx={CX - 16}
-					cy={CY - 20}
-					rx="26"
-					ry="16"
-					fill="rgba(255,255,255,0.60)"
-				/>
-				{/* Logo as SVG image */}
 				<image
-					href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iProfit-Fs6nCTJOnVonPcC0aUjB4QnvUBamf8.png"
-					x={CX - 46}
-					y={CY - 18}
-					width="92"
+					href="/iProfit.png"
+					x={DIAGRAM_CX - 48}
+					y={DIAGRAM_CY - 18}
+					width="96"
 					height="36"
 					preserveAspectRatio="xMidYMid meet"
 				/>
 			</g>
 
-			{/* ── Keyframe for spoke draw animation ── */}
-			<style>{`@keyframes wfDrawLine { to { stroke-dashoffset: 0; } }`}</style>
+			{DIAGRAM_MODULES.map((mod, i) => {
+				const p = getModulePosition(i);
+				const dx = p.x - DIAGRAM_CX;
+				const dy = p.y - DIAGRAM_CY;
+				const dist = Math.sqrt(dx * dx + dy * dy);
+				const ux = dx / dist;
+				const uy = dy / dist;
+				const lineStartX = DIAGRAM_CX + ux * (DIAGRAM_HUB_R + 4);
+				const lineStartY = DIAGRAM_CY + uy * (DIAGRAM_HUB_R + 4);
+				const lineEndX = p.x - ux * (DIAGRAM_NODE_R + 8);
+				const lineEndY = p.y - uy * (DIAGRAM_NODE_R + 8);
+
+				const angle = Math.atan2(dy, dx);
+				const cos = Math.cos(angle);
+				const sin = Math.sin(angle);
+
+				const labelRadius = DIAGRAM_ORBIT_R + DIAGRAM_NODE_R + 20;
+
+				let labelX = DIAGRAM_CX + labelRadius * cos;
+				const labelY = DIAGRAM_CY + labelRadius * sin;
+				let textAnchor: "start" | "end" | "middle" = "middle";
+
+				if (cos > 0.3) {
+					textAnchor = "start";
+				} else if (cos < -0.3) {
+					textAnchor = "end";
+				}
+
+				const marginX = 52;
+				if (textAnchor === "start") {
+					if (labelX < marginX) labelX = marginX;
+					if (labelX > DIAGRAM_SIZE - marginX) labelX = DIAGRAM_SIZE - marginX;
+				} else if (textAnchor === "end") {
+					if (labelX < marginX) labelX = marginX;
+					if (labelX > DIAGRAM_SIZE - marginX) labelX = DIAGRAM_SIZE - marginX;
+				} else {
+					if (labelX < marginX) labelX = marginX;
+					if (labelX > DIAGRAM_SIZE - marginX) labelX = DIAGRAM_SIZE - marginX;
+				}
+
+				return (
+					<g key={mod.lines[0]}>
+						<line
+							x1={lineStartX}
+							y1={lineStartY}
+							x2={lineEndX}
+							y2={lineEndY}
+							stroke="#22c55e"
+							strokeWidth="1.5"
+							strokeOpacity="0.7"
+						/>
+						<g filter="url(#nodeShadow)">
+							<circle cx={p.x} cy={p.y} r={DIAGRAM_NODE_R} fill="#0ea5e9" />
+							<circle
+								cx={p.x}
+								cy={p.y}
+								r={DIAGRAM_NODE_R}
+								fill="none"
+								stroke="#ffffff"
+								strokeWidth="2"
+								opacity="0.9"
+							/>
+							<g transform={`translate(${p.x - 12}, ${p.y - 12})`}>
+								<mod.icon className="w-6 h-6 text-white" />
+							</g>
+						</g>
+						<text
+							x={labelX}
+							y={labelY}
+							textAnchor={textAnchor}
+							fontSize="13"
+							fontWeight="500"
+							fill="#111827"
+							fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+						>
+							{mod.lines.map((line, idx) => (
+								<tspan key={idx} x={labelX} dy={idx === 0 ? 0 : 16}>
+									{line}
+								</tspan>
+							))}
+						</text>
+					</g>
+				);
+			})}
 		</svg>
 	);
 }
@@ -416,8 +308,8 @@ export default function WhyFounders() {
 					<FadeInUp delay={0}>
 						<div className="relative flex items-center justify-center">
 							{/* Card shell */}
-							<div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-slate-50 to-sky-50/50 border border-slate-100/80 shadow-2xl shadow-slate-100" />
-							<div className="relative w-full max-w-[500px] mx-auto p-6 sm:p-10">
+							<div className="absolute inset-0" />
+							<div className="relative w-full max-w-[550px] mx-auto p-6">
 								<PlatformDiagram />
 							</div>
 						</div>

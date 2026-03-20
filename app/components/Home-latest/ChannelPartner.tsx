@@ -107,7 +107,7 @@ export default function ChannelPartner() {
 							transition={{ delay: 0.2 }}
 							className="mx-auto max-w-2xl font-outfit text-base leading-relaxed text-[#6B7280] sm:text-lg"
 						>
-							Join the iProfit ecosystem and help IT companies transform their
+							Join the iProfit ecosystem and help companies transform their
 							operations while growing your business through our structured
 							partner network.
 						</motion.p>
@@ -196,7 +196,7 @@ export default function ChannelPartner() {
 							transition={{ delay: 0.1 }}
 							className="mx-auto mb-12 max-w-2xl font-outfit text-lg leading-relaxed text-white/90"
 						>
-							Join 15+ enterprises and 11,000+ users who already run their
+							Join 50+ enterprises and 11,000+ users who already run their
 							entire business on iProfit. Start your free trial today no credit
 							card required.
 						</motion.p>

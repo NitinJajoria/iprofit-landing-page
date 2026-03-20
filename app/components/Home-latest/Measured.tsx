@@ -86,7 +86,7 @@ const highlights = [
 	},
 	{
 		label: "Mobile App",
-		text: "CEOs Visibility through the mobile app anytime, anywhere",
+		text: "CEO's Visibility through the mobile app anytime, anywhere",
 		// replace icon with a mobile app icon
 		icon: (
 			<svg

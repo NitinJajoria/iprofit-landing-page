@@ -106,7 +106,7 @@ export default function Footer() {
 								iProfit
 							</h3>
 							<p className="mt-4 font-inter text-[14px] leading-relaxed text-[#9CA3AF]">
-								Make your complicated business operations simple.
+								Make Your Complicated Business Operations Simple.
 							</p>
 
 							{/* Socials */}

@@ -11,14 +11,14 @@ const TESTIMONIALS = [
 		position: "CEO, AlmaBay",
 		company: "AlmaBay",
 		quote:
-			"iProfit cleaned up our entire operations finance, inventory, payroll everything runs smooth now. We finally have one place to see how the business is actually doing.",
+			"iProfit cleaned up our entire operations - finance, inventory, payroll - everything runs smoothly now. We finally have one place to see how the business is actually doing.",
 		image: "/Testimonials/vishal.png",
 		rating: 5,
 	},
 	{
 		id: 2,
 		author: "Maninder Bajwa",
-		position: "Founder & CEO",
+		position: "Founder & CEO, iScuela",
 		company: "iScuela",
 		quote:
 			"Scaling our educational platform required a robust back-end for HR and Finance. iProfit provided exactly that. The automation level in payroll is unmatched.",
@@ -28,8 +28,8 @@ const TESTIMONIALS = [
 	{
 		id: 3,
 		author: "Vikram Singh",
-		position: "Managing Director",
-		company: "V-Trans",
+		position: "Managing Director, Antier",
+		company: "Antier",
 		quote:
 			"Managing logistics and assets was a nightmare before iProfit. Now, we track everything in real-time. The productivity gains have been significant for our entire team.",
 		image: "/Testimonials/vikramsingh.jpg",

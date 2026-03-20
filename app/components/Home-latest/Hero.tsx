@@ -50,7 +50,7 @@ export default function Hero() {
 						className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#008ADD]/20 bg-[#F0F9FF] px-4 py-1.5 backdrop-blur-sm"
 					>
 						<span className="font-outfit text-sm font-medium tracking-wide text-[#008ADD]">
-							Made in India, Made for the world
+							Made in India, made for the world
 						</span>
 					</motion.div>
 
@@ -75,7 +75,7 @@ export default function Hero() {
 						transition={{ duration: 0.6, delay: 0.2 }}
 						className="mb-10 max-w-2xl font-outfit text-lg font-normal leading-relaxed text-[#4B5563] sm:text-xl"
 					>
-						iProfit unifies Finance, HR & Payroll, Inventory, Projects, and
+						iProfit unifies Finance, HR and Payroll, Inventory, Projects, and
 						Assets into a single ERP so your team spends less time on admin and
 						more time growing.
 					</motion.p>

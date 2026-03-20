@@ -10,7 +10,7 @@ import {
 
 const stats = [
 	{
-		number: "15+",
+		number: "50+",
 		label: "Enterprises Live",
 		icon: HiOutlineBuildingOffice2,
 		color: "text-[#008ADD]",
@@ -27,15 +27,15 @@ const stats = [
 		number: "16+ Cr",
 		label: "Salaries Processed Monthly",
 		icon: HiOutlineCurrencyRupee,
-		color: "text-emerald-500",
-		bgColor: "bg-emerald-50",
+		color: "text-[#008ADD]",
+		bgColor: "bg-blue-50",
 	},
 	{
 		number: "90+",
-		label: "NPS Score",
+		label: "CSAT Score",
 		icon: HiOutlineStar,
-		color: "text-indigo-500",
-		bgColor: "bg-indigo-50",
+		color: "text-[#008ADD]",
+		bgColor: "bg-blue-50",
 	},
 ];
 
